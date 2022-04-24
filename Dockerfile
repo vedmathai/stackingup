@@ -4,5 +4,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm i
+RUN npm install -g serve
 COPY . ./
-CMD ["npm", "start"]
+RUN npm run build
+CMD ["serve", "-s", "build"]
