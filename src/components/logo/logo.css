@@ -1,0 +1,21 @@
+.logo-container {
+    display: block;
+    fill: var(--dark-color);
+    margin-left: 220px;
+    margin-top: 4px;
+}
+
+.stackingup-logo {
+    display: inline-block;
+    width: 80px;
+    fill: #1D1C1A;
+}
+
+.logo-text {
+    margin-left: 20px;
+    display: inline-block;
+    font-family: var(--font-family-logo);
+    font-size: 35px;
+    top: -20px;
+    position: relative;
+}
