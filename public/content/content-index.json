@@ -1,10 +1,11 @@
 [
     {
         "display_name": "Introduction",
-        "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "Introduction Sub",
+                "id": "introd",
+                "content_location": "introduction/introduction.md"
             }
         ]
     },
