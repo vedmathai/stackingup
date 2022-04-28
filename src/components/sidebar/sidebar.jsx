@@ -3,6 +3,10 @@ import TreeView from '@mui/lab/TreeView';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import TreeItem from '@mui/lab/TreeItem';
+import { useState, useEffect } from 'react';
+const axios = require('axios');
+
+var content_index_path = process.env.PUBLIC_URL + '/content/content-index.json';
 
 
 const json2treeview = (json_obj) => {
@@ -10,7 +14,6 @@ const json2treeview = (json_obj) => {
     tree_items = json_obj.map((tree_item_obj) => {
         return json2treeitems(tree_item_obj)
     });
-    console.log(tree_items);
     return <TreeView
         aria-label="multi-select"
         defaultCollapseIcon={<ExpandMoreIcon />}
@@ -22,7 +25,6 @@ const json2treeview = (json_obj) => {
 }
 
 const json2treeitems = (json_obj) => {
-    console.log(json_obj)
     if (json_obj.children) {
         var tree_items = json_obj.children.map((tree_item_json) => {
             return json2treeitems(tree_item_json);
@@ -35,8 +37,16 @@ const json2treeitems = (json_obj) => {
 
 
 function SideBar() {
-    var content_index = require('content/content-index.json');
-    var tree_view = json2treeview(content_index);
+    var [contentIndex, setContentIndex] = useState([]);
+    var tree_view;
+    useEffect(() => {
+        (async() => {
+            const response = await axios(content_index_path);
+            var content_index = response.data;
+            setContentIndex(content_index);
+        }) ();
+    }, []);
+    tree_view = json2treeview(contentIndex);
     return (
       <div className="sidebar">
         

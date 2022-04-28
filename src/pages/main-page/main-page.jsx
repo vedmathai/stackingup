@@ -1,15 +1,18 @@
 import './main-page.css';
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Navbar from 'components/navbar/navbar';
-import Sidebar from 'components/sidebar/sidebar';
-import RightSideBar from 'components/right-side-bar/right-side-bar';
+import Navbar from 'src/components/navbar/navbar';
+import Sidebar from 'src/components/sidebar/sidebar';
+import RightSideBar from 'src/components/right-side-bar/right-side-bar';
 import ReactMarkdown from 'react-markdown'
-import h1_component from 'components/md_components/h1/h1';
-import sample from './sample.md'
+import id2content_location from 'src/pages/main-page/id2content-location';
+import h1_component from 'src/components/md_components/h1/h1';
+const axios = require('axios');
+
+
 
 var getHeadings = (mdData) => {
   const regexp = /^#{1} (.*)[\n]*/gm;
@@ -19,13 +22,22 @@ var getHeadings = (mdData) => {
 
 function MainPage() {
   var [mdData, setMdData] = useState('');
+  var [headings, setHeadings] = useState([]);
   const { id } = useParams();
-  fetch(sample)
-  .then(r => r.text())
-  .then(text => {
-    setMdData(text);
-  });
-  var headings = getHeadings(mdData);
+
+  useEffect(() => {
+    (async() => {
+      var id2content_location_dict = await id2content_location();
+      console.log("id2content_location_dict", id2content_location_dict);
+      const content_location = id2content_location_dict[id];
+      const response = await axios(content_location);
+      const content_index = response.data;
+      setMdData(content_index);
+    }) ();
+  }, []);
+
+  headings = getHeadings(mdData);
+  
   return (
     <div className="App">
         <Sidebar/>
@@ -42,7 +54,6 @@ function MainPage() {
               </ReactMarkdown>
           </div>
         </div>
-        <RightSideBar items={headings}/>
     </div>
   );
 }
