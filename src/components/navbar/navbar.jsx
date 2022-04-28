@@ -29,9 +29,8 @@ function NavBar() {
       })}>
         <Logo/>
         <div className='navitems-container'>
-          <NavItem label="Go to Top"></NavItem>
+          <NavItem label="Go to the Top"></NavItem>
           <NavItem label="About"></NavItem>
-          <NavItem label="Consulting"></NavItem>
           <Button label="Donate"></Button>
         </div>
       </div>

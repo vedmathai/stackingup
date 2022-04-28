@@ -1,0 +1,19 @@
+.right-side-bar {
+    position: fixed;
+    right: 0;
+    width: 20vw;
+    height: 300px;
+    top: 200px;
+    margin-right: 30px;
+}
+
+.right-side-bar-item {
+    cursor: pointer;
+    font-family: var(--font-family-content-text);
+    margin-top: 18px;
+    color: var(--light-gray);
+}
+
+.right-side-bar-item a{
+    all: unset;
+}
