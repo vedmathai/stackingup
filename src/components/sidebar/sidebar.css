@@ -1,7 +1,7 @@
 .sidebar {
-    width: 300px;
+    width: 320px;
     height: 100vh;
-    padding: 10px;
+    padding-left: 10px;
     position: fixed;
     left: 0;
     top: 0;
@@ -12,4 +12,30 @@
  
 .sidebar--hidden {
     left: -120px;
+}
+
+.contents-heading {
+    font-family: var(--font-family-text);
+    font-size: 30px;
+}
+
+.sidebar-treeview-container {
+    margin-top: 190px;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tree-item{
+    margin-top: 10px !important;
+}
+
+.MuiTreeItem-content.Mui-selected {
+    background-color: var(--blue-color) !important;
+    border: 2px var(--dark-color) dotted;
+}
+
+.MuiTreeItem-label {
+    font-family: var(--font-family-text) !important;
+    font-size: 20px !important;
 }

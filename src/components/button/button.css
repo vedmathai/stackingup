@@ -1,0 +1,19 @@
+.button {
+    display: inline-block;
+    font-family: var(--font-family-logo);
+    margin-left: 40px;
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    padding : 15px;
+    border : 2px var(--dark-color) dotted;
+    border-radius : 15px;
+    transition : background-color ease-in-out 0.2s;
+    color: var(--dark-color);
+    background-color: var(--blue-color);
+}
+
+.button:hover{
+    background-color : var(--darker-blue-color);
+    color: var(--white-color)
+}

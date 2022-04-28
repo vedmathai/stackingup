@@ -1,0 +1,101 @@
+[
+    {
+        "display_name": "Introduction",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Design",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Working in a Team",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Setting up a Server",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Setting up a Database",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Authorization",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Adding a Front End",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Deployment",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Maintaining the System in Production",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Adding Machine Learning",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    },
+    {
+        "display_name": "Visualization",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Introduction Sub"
+            }
+        ]
+    }
+]

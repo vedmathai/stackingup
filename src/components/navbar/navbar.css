@@ -12,4 +12,10 @@
 .navbar--hidden {
     top: -120px;
 }
-  
+
+.navitems-container {
+    display: inline-block;
+    margin-left: 30vw;
+    top: -25px;
+    position: relative;
+}
