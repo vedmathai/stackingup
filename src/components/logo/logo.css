@@ -1,8 +1,5 @@
-.logo-container {
-    display: inline-block;
-    fill: var(--dark-color);
-    margin-left: 220px;
-    margin-top: 4px;
+.logo {
+    cursor: pointer;  
 }
 
 .stackingup-logo {
