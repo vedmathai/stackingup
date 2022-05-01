@@ -23,25 +23,32 @@ function NavBar() {
   };
 
 
-  window.addEventListener("scroll", handleScroll);     
+  window.addEventListener("scroll", handleScroll);
+
+  const onclick_logo_fn = () => {
+    navigate(`/`);
+  };
+
 
   const onclick_go_top_fn = () => {
     window.scrollTo(0, 0);
   };
 
   const onclick_about_fn = () => {
-    navigate(`/about`)
+    navigate(`/about`);
   }
 
   const onclick_donate_fn = () => {
-    navigate(`/donate`)
+    navigate(`/donate`);
   }
 
   return (
     <div className={classnames("navbar", {
       "navbar--hidden": !visible
     })}>
-      <Logo/>
+      <div className='logo-container'>
+        <Logo onClickFn={onclick_logo_fn}/>
+      </div>
       <div className='navitems-container'>
         <NavItem label="Go to the Top" onClickFn={onclick_go_top_fn}></NavItem>
         <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>

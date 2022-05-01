@@ -13,9 +13,17 @@
     top: -120px;
 }
 
+.logo-container {
+    display: inline-block;
+    fill: var(--dark-color);
+    margin-left: 220px;
+    margin-top: 4px;
+}
+
 .navitems-container {
     display: inline-block;
     margin-left: 30vw;
     top: -25px;
     position: relative;
 }
+

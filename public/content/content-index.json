@@ -4,7 +4,7 @@
         "children": [
             {
                 "display_name": "Introduction Sub",
-                "id": "introd",
+                "id": "introduction",
                 "content_location": "introduction/introduction.md"
             }
         ]
