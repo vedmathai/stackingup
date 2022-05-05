@@ -7,6 +7,12 @@
     margin-right: 30px;
 }
 
+@media only screen and (max-width: 600px) {
+    .right-side-bar {
+        display: none;
+    }
+}
+
 .right-side-bar-item {
     cursor: pointer;
     font-family: var(--font-family-content-text);
