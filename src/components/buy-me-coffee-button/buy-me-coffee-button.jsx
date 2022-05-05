@@ -6,7 +6,6 @@ import BuyMeCoffeeLogo from './buy-me-coffee-logo'
 function BuyMeCoffeeButton() {
 
   const onclick_buy_me_coffee_fn = () => {
-    console.log('ved');
     window.open(
         'https://www.buymeacoffee.com/vedmathai',
         '_blank'

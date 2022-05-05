@@ -9,7 +9,13 @@
     border-bottom: 1px var(--dark-color) solid;
     z-index: 100;
 }
-  
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        display: none;
+    }
+}
+
 .navbar--hidden {
     top: -120px;
 }
@@ -27,4 +33,3 @@
     top: -25px;
     position: relative;
 }
-
