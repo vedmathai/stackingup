@@ -4,8 +4,7 @@ import './main-page.css';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Navbar from 'src/components/navbar/navbar';
-import Sidebar from 'src/components/sidebar/sidebar';
+import NavbarsComplex from 'src/components/navbars-complex/navbars-complex'
 import RightSideBar from 'src/components/right-side-bar/right-side-bar';
 import ReactMarkdown from 'react-markdown'
 import id2content_location from 'src/pages/main-page/id2content-location';
@@ -40,8 +39,7 @@ function MainPage() {
   
   return (
     <div className="App">
-        <Sidebar/>
-        <Navbar/>
+        <NavbarsComplex showSideBar={true}/>
         <RightSideBar items={headings}/>
         <div className="content-container">
           <div className="content">

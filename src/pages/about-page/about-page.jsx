@@ -1,15 +1,14 @@
 import './about-page.css';
-import jack_card from 'src/assets/jack-card-drawing.png'
-import NavBar from 'src/components/navbar/navbar';
-
-
 import React, { useState } from 'react';
+
+import jack_card from 'src/assets/jack-card-drawing.png'
+import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
 
 
 function AboutPage() {
   return (
     <div className='about-page'>
-      <NavBar/>
+      <NavbarsComplex showSideBar={false}/>
       <div className='about-head-turner-container'>
         <div className='about-head-turner-first-dialogue'>
           This is a labour of &#10084; by me, Ved Mathai.

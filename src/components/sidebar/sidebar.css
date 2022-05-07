@@ -8,16 +8,21 @@
     transition: left 0.5s;
     background-color: white;
     border-right: 1px var(--dark-color) solid;
+    z-index: 100;
 }
 
 @media only screen and (max-width: 600px) {
-    .sidebar {
-        display: none;
+    .sidebar-visible {
+        left: 0px;
     }
-}
- 
-.sidebar--hidden {
-    left: -120px;
+
+    .sidebar-hidden {
+        left: -100vw;
+    }
+
+    .sidebar-treeview-container {
+        margin-top: 50px;
+    }
 }
 
 .contents-heading {
@@ -26,7 +31,6 @@
 }
 
 .sidebar-treeview-container {
-    margin-top: 190px;
     height: 600px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -46,8 +50,15 @@
     font-size: 20px !important;
 }
 
+.mobile-nav-sidebar {
+    margin-top: 100px;
+}
+
 @media only screen and (min-width: 600px) {
     .mobile-nav-sidebar {
         display: none;
+    }
+    .sidebar-treeview-container {
+        margin-top: 190px;
     }
 }

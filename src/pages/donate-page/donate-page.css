@@ -41,13 +41,6 @@
     font-size: 30px;
 }
 
-.buy-me-coffee-outlink-container {
-    margin-top: 100px;
-    margin-left: 37vw;
-    width: 100vw;
-    margin-bottom: 100px;
-}
-
 #razorpay-form {
     width: 40vw;
     overflow-x: hidden;
@@ -56,4 +49,48 @@
 
 .hand-waving {
     margin-top: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .tip-jar-image-container{
+        display: block;
+    }
+
+    .tip-jar-image {
+        width: 90vw;
+    }
+
+    .donate-page-headings {
+        display: block;
+        width: 90vw;
+        margin-left: 26px;
+        top: 0px;
+    }
+
+    .donate-page-heading {
+        font-size: 45px;
+    }
+
+    .donate-page-explanation {
+        width: 90vw;
+        font-size: 24px;
+        margin-top: 40px;
+    }
+
+    #razorpay-form {
+        margin: auto;
+        margin-top: 65px;
+    }
+
+    .hand-waving {
+        margin-top: 60px;
+    }
+
+}
+
+.buy-me-coffee-outlink-container {
+    margin-top: 100px;
+    margin-left: 37vw;
+    width: 100vw;
+    margin-bottom: 100px;
 }

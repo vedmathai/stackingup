@@ -7,7 +7,7 @@
     transition: top 0.5s;
     background-color: white;
     border-bottom: 1px var(--dark-color) solid;
-    z-index: 100;
+    z-index: 200;
 }
 
 

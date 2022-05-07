@@ -49,6 +49,26 @@
     text-decoration-color: var(--blue-color);
 }
 
+@media only screen and (max-width: 600px) {
+    .about-head-turner-first-dialogue {
+        font-size: 40px;
+        margin-top: 150px;
+    }
+    .card-image {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .about-head-turner-second-dialogue {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+    .consultation-call-heading {
+        font-size: 40px;
+    }
+}
+
+
+
 .consultation-call-text-container {
     color: var(--dark-color);
     font-size: 24px;
