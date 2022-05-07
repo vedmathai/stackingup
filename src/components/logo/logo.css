@@ -16,3 +16,16 @@
     top: -20px;
     position: relative;
 }
+
+@media only screen and (max-width: 600px) {
+    .stackingup-logo {
+        width: 55px;
+    }
+  
+    .logo-text {
+        font-size: 24px;
+        top: -14px;
+        margin-left: 10px;
+    }
+  }
+  

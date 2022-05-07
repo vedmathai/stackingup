@@ -39,7 +39,7 @@ const json2treeitems = (json_obj) => {
 }
 
 
-function SideBar() {
+var SideBar = (props) => {
     const navigate = useNavigate()
     var [contentIndex, setContentIndex] = useState([]);
     var tree_view;
@@ -48,11 +48,6 @@ function SideBar() {
         navigate(`/`);
       };
     
-    
-    const onclick_go_top_fn = () => {
-        window.scrollTo(0, 0);
-    };
-
     const onclick_about_fn = () => {
         navigate(`/about`);
     }
@@ -61,7 +56,12 @@ function SideBar() {
         navigate(`/donate`);
     }
 
+    var visibleClass = props.openMenuStatus? "sidebar-visible": "sidebar-hidden";
 
+    var sidebar = <div className="sidebar-treeview-container">
+        <div className="contents-heading">Contents</div>
+        {tree_view}
+    </div>;
 
     useEffect(() => {
         (async() => {
@@ -72,17 +72,13 @@ function SideBar() {
     }, []);
     tree_view = json2treeview(contentIndex);
     return (
-      <div className="sidebar">
-        
-        <div className="sidebar-treeview-container">
-            <div className="contents-heading">Contents</div>
-            {tree_view}
-        </div>
+      <div className={"sidebar " + visibleClass}>
         <div className="mobile-nav-sidebar">
-            <NavItem label="Go to the Top" onClickFn={onclick_go_top_fn}></NavItem>
             <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>
             <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
         </div>
+        {props.showSidebar && sidebar}
+
       </div>
     );
   }

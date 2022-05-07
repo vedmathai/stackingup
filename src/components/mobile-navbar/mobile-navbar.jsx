@@ -1,62 +1,35 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom"
-import './navbar.css'
+import './mobile-navbar.css'
 import Logo from '../logo/logo';
-import NavItem from 'src/components/navitem/navitem';
-import Button from 'src/components/button/button';
-
-var classnames = require('classnames');
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 
-function NavBar() {
-  const navigate = useNavigate()
+function MobileNavBar(props) {
+  const navigate = useNavigate();
 
-  var [visible, setVisible] = useState(true);
-  var [prevScrollPos, setPrevScrollPos] = useState(0);
-
-  const handleScroll = (event) => {
-    const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollPos > currentScrollPos;
-
-    setPrevScrollPos(currentScrollPos);
-    setVisible(visible);
-  };
-
-
-  window.addEventListener("scroll", handleScroll);
-
-  const onclick_logo_fn = () => {
+  const onclickLogoFn = () => {
     navigate(`/`);
   };
 
-
-  const onclick_go_top_fn = () => {
-    window.scrollTo(0, 0);
-  };
-
-  const onclick_about_fn = () => {
-    navigate(`/about`);
+  const onClickMenuButtonFn = () => {
+    props.setOpenMenuStatus(!props.openMenuStatus);
   }
 
-  const onclick_donate_fn = () => {
-    navigate(`/donate`);
-  }
+  const icon = props.openMenuStatus? <CloseIcon fontSize='inherit'></CloseIcon>: <MenuIcon fontSize='inherit'></MenuIcon>;
 
   return (
-    <div className={classnames("navbar", {
-      "navbar--hidden": !visible
-    })}>
-      <div className='logo-container'>
-        <Logo onClickFn={onclick_logo_fn}/>
+    <div className="mobile-navbar">
+      <div onClick={() => onClickMenuButtonFn()} className="mobile-navbar-menu-button">
+        {icon}
       </div>
-      <div className='navitems-container'>
-        <NavItem label="Go to the Top" onClickFn={onclick_go_top_fn}></NavItem>
-        <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>
-        <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
+      <div className='mobile-navbar-logo-container'>
+        <Logo onClickFn={() => onclickLogoFn()}/>
       </div>
     </div>
   );
 }
   
-  export default NavBar;
+  export default MobileNavBar;
   

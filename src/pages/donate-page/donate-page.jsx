@@ -1,7 +1,7 @@
 import './donate-page.css';
 import React, { useState, useEffect } from 'react';
 import tip_jar from 'src/assets/tip-jar-drawing.png'
-import NavBar from 'src/components/navbar/navbar';
+import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
 import BuyMeCoffeeButton from 'src/components/buy-me-coffee-button/buy-me-coffee-button';
 
 
@@ -21,7 +21,7 @@ function DonatePage() {
   }, []);
   return (
     <div className='donate-page'>
-      <NavBar/>
+      <NavbarsComplex showSideBar={false}/>
       <div className='donate-page-section-one'>
         <div className='tip-jar-image-container'>
           <img className='tip-jar-image' src={tip_jar} />
