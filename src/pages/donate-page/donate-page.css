@@ -3,6 +3,7 @@
     top: 0px;
     position: absolute;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 .tip-jar-image-container {
@@ -45,4 +46,14 @@
     margin-left: 37vw;
     width: 100vw;
     margin-bottom: 100px;
+}
+
+#razorpay-form {
+    width: 40vw;
+    overflow-x: hidden;
+    margin-left: 45vw;
+}
+
+.hand-waving {
+    margin-top: 100px;
 }
