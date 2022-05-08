@@ -4,6 +4,10 @@
     height: 100vh;
 }
 
+.landing-page-head-turner-mobile-image-container {
+    display: none;
+}
+
 .landing-page-info-container{
     display: inline-block;
     position: relative;
@@ -31,4 +35,44 @@
 
 .landing-page-head-turner-image {
     width: 45vw;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .landing-page-container {
+        height: 120vh;
+    }
+
+    .landing-page-head-turner-mobile-image-container {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .landing-page-info-container {
+        position: relative;
+        width: 90vw;
+        padding-left: 20px;
+        top: 6vh;
+    }
+
+    .landing-page-heading {
+        margin-top: 30px;
+    }
+
+    .nav-items-container {
+        left: 40px;
+    }
+
+    .landing-page-nav-item {
+        display: block;
+        margin-top: 50px;
+    }
+
+    .landing-page-head-turner-image {
+        width: 80vw;
+    }
+
+    .landing-page-head-turner-image-container {
+        display: none;
+    }
 }

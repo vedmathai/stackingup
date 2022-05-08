@@ -33,18 +33,6 @@
     color: black;
 }
 
-@media only screen and (max-width: 600px) {
-  .content-container {
-    margin-left: 5vw;
-    margin-top: 50px;
-  }
-
-  .content {
-    width: 90vw;
-  }
-}
-
-
 .content h1 {
   font-size: 42px;
   font-family: var(--font-family-content-text);
@@ -82,6 +70,11 @@
   width: 1em; /* Also needed for space (tweak if needed) */
   margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
+
+.content ul li {
+  font-size: 24px;
+  font-family: var(--font-family-content-text);
+}
   
 .App-link {
     color: #61dafb;
@@ -95,4 +88,27 @@
       transform: rotate(360deg);
     }
 }
-  
+
+
+@media only screen and (max-width: 600px) {
+  .content-container {
+    margin-left: 5vw;
+    margin-top: 50px;
+  }
+
+  .content {
+    width: 90vw;
+  }
+
+  .content h1 {
+    font-size: 30px;
+  }
+
+  .content p {
+    font-size: 20px;
+  }
+
+  .content ul li {
+    font-size: 20px;
+  }
+}
