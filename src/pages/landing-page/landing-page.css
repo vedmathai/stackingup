@@ -28,6 +28,11 @@
     position: relative;
 }
 
+.landing-page-nav-item {
+    display: inline-block;
+    margin-left: 30px;
+}
+
 .landing-page-head-turner-image-container {
     display: inline-block;
     margin-top: 100px;
