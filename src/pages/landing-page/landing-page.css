@@ -43,9 +43,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-
     .landing-page-container {
-        height: 120vh;
+        height: 150vh;
     }
 
     .landing-page-head-turner-mobile-image-container {
@@ -62,6 +61,7 @@
 
     .landing-page-heading {
         margin-top: 30px;
+        font-size: 30px;
     }
 
     .nav-items-container {
