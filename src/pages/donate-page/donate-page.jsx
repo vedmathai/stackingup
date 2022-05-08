@@ -1,8 +1,7 @@
 import './donate-page.css';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import tip_jar from 'src/assets/tip-jar-drawing.png'
 import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
-import BuyMeCoffeeButton from 'src/components/buy-me-coffee-button/buy-me-coffee-button';
 
 
 function DonatePage() {
@@ -15,16 +14,13 @@ function DonatePage() {
   
     document.getElementById('razorpay-form').appendChild(script);
   
-    return () => {
-      document.getElementById('razorpay-form').removeChild(script);
-    }
   }, []);
   return (
     <div className='donate-page'>
       <NavbarsComplex showSideBar={false}/>
       <div className='donate-page-section-one'>
         <div className='tip-jar-image-container'>
-          <img className='tip-jar-image' src={tip_jar} />
+          <img className='tip-jar-image' src={tip_jar} alt="tip jar" />
         </div>
         <div className='donate-page-headings'>
           <div className='donate-page-heading'>
