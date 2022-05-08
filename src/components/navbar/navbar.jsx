@@ -50,9 +50,15 @@ function NavBar() {
         <Logo onClickFn={onclick_logo_fn}/>
       </div>
       <div className='navitems-container'>
-        <NavItem label="Go to the Top" onClickFn={onclick_go_top_fn}></NavItem>
-        <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>
-        <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
+        <div className="navbar-navitem">
+          <NavItem label="Go to the Top" onClickFn={onclick_go_top_fn}></NavItem>
+        </div>
+        <div className="navbar-navitem">
+          <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>
+        </div>
+        <div className="navbar-navitem">
+          <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
+        </div>
       </div>
     </div>
   );

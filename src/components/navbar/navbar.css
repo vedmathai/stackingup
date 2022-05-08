@@ -34,3 +34,8 @@
     top: -25px;
     position: relative;
 }
+
+.navbar-navitem {
+    display: inline-block;
+    margin-left: 40px;
+}

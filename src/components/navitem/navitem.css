@@ -1,7 +1,5 @@
 .navitem {
-    display: inline-block;
     font-family: var(--font-family-logo);
-    margin-left: 40px;
     position: relative;
     font-size: 20px;
     cursor: pointer;
