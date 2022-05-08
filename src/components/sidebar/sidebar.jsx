@@ -81,8 +81,8 @@ var SideBar = (props) => {
             <div className="mobile-nav-sidebar-navitem">
                 <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
             </div>
-            {sidebar}
         </div>
+        {sidebar}
       </div>
     );
   }
