@@ -81,4 +81,8 @@
     .sidebar-treeview-container {
         margin-top: 190px;
     }
+    
+    .sidebar-hidden-large-screen {
+        display: none;
+    }
 }

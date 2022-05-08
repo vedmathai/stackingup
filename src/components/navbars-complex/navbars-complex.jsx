@@ -9,7 +9,7 @@ function NavbarsComplex(props) {
     var [openMenuStatus, setOpenMenuStatus] = useState(false);
     return (
         <>
-            <SideBar openMenuStatus={openMenuStatus} />
+            <SideBar showSideBar={props.showSideBar} openMenuStatus={openMenuStatus} />
             <MobileNavBar openMenuStatus={openMenuStatus} setOpenMenuStatus={setOpenMenuStatus} />
             <NavBar />
         </> 
