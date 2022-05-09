@@ -16,7 +16,7 @@ function LandingPage() {
   }
   
   const onclick_donate_fn = () => {
-    navigate('/donate')
+    navigate('/buy')
   }
 
   const onclick_book_fn = () => {
@@ -47,7 +47,7 @@ function LandingPage() {
               <NavItem className="landing-page-nav-item" label='About' onClickFn={onclick_about_fn}></NavItem>
             </div>
             <div className="landing-page-nav-item">
-              <NavItem className="landing-page-nav-item" label='Donate' onClickFn={onclick_donate_fn}></NavItem>
+              <NavItem className="landing-page-nav-item" label='Buy' onClickFn={onclick_donate_fn}></NavItem>
             </div>
             <div className="landing-page-nav-item">
               <Button className="landing-page-nav-item" label='Go to the Book' onClickFn={onclick_book_fn}></Button>
