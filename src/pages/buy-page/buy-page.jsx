@@ -24,8 +24,9 @@ function BuyPage() {
   
     script.src = "https://checkout.razorpay.com/v1/payment-button.js";
     script.async = true;
-    script.setAttribute('data-payment_button_id','pl_JS3OwehgVuS6Q7')
+    script.setAttribute('data-payment_button_id','pl_JT2Xg5LGWJWgIP')
   
+
     document.getElementById('razorpay-form').appendChild(script);
   
   }, []);
