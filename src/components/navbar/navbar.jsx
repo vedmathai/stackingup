@@ -39,7 +39,7 @@ function NavBar() {
   }
 
   const onclick_donate_fn = () => {
-    navigate(`/donate`);
+    navigate(`/buy`);
   }
 
   return (
@@ -57,7 +57,7 @@ function NavBar() {
           <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>
         </div>
         <div className="navbar-navitem">
-          <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
+          <Button label="Buy" onClickFn={onclick_donate_fn}></Button>
         </div>
       </div>
     </div>
