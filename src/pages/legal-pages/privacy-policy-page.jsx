@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom"
 import tip_jar from 'src/assets/tip-jar-drawing.png'
 import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
 import Footer from 'src/components/footer/footer';
+import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 
 
 function PrivacyPolicyPage() {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    pageViewGoogleAnalyticsEvent('privacy_policy_page');
   }, []);
   return (
     <div className='legal-page'>

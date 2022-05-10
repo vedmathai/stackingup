@@ -4,9 +4,12 @@ import tip_jar from 'src/assets/tip-jar-drawing.png'
 import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
 import Footer from 'src/components/footer/footer';
 import DonateButton from '../../components/donate-button/donate-button';
+import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 
 function DonatePage() {
-
+  useEffect(() => {
+    pageViewGoogleAnalyticsEvent('donate_page');
+  }, []);
   return (
     <div className='donate-page'>
       <NavbarsComplex showSideBar={false}/>

@@ -2,10 +2,12 @@ import './legal-pages.css';
 import React, { useLayoutEffect } from 'react';
 import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
 import Footer from 'src/components/footer/footer';
+import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 
 function RefundPolicyPage() {
   useLayoutEffect(() => {
     window.scrollTo(0, 1);
+    pageViewGoogleAnalyticsEvent('refund_policy_page');
   }, []);
   return (
     <div className='legal-page'>
