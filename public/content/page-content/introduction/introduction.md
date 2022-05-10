@@ -42,15 +42,17 @@ A good book has the right mix of abstract theory and concrete practical cases th
 In that light, we are going to attempt to build a recipes app.
 Designing the requirements is going to be one the next thing we do but the main ideas are the following, it’s got:
 * A search function that is able to look up recipes by the title or the explanations.
-A reverse-search function that is able to look up a recipe given the ingredients.
-A content-management system that allows users to add new recipes.
-A user-management system.
-A swanky front-end.
-A recipe generating tool that is able to take in the starting words and start suggesting the rest of the recipe for users while writing the recipe out.
+* A reverse-search function that is able to look up a recipe given the ingredients.
+* A content-management system that allows users to add new recipes.
+* A user-management system.
+* A swanky front-end.
+* A recipe generating tool that is able to take in the starting words and start suggesting the rest of the recipe for users while writing the recipe out.
+
 We are going to be building this using:
-Python for the server side code.
-The Flask for the API endpoints implementation.
-React for the front end.
-MySQL for the database.
-And a smattering of different libraries for Machine Learning.
+* Python for the server side code.
+* The Flask for the API endpoints implementation.
+* React for the front end.
+* MySQL for the database.
+* And a smattering of different libraries for Machine Learning.
+
 That being said, and to again reiterate what has been mentioned above, while we promise that we’ll go through all the lines of cod into enough details in the code so that a reader can implement a fully-functioning app. We’ll be concentrating more on the whys and why nots. This will help move to other versions easily.

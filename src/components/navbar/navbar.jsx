@@ -26,7 +26,7 @@ function NavBar() {
   window.addEventListener("scroll", handleScroll);
 
   const onclick_logo_fn = () => {
-    navigate(`/`);
+    navigate('/');
   };
 
 
@@ -35,11 +35,11 @@ function NavBar() {
   };
 
   const onclick_about_fn = () => {
-    navigate(`/about`);
+    navigate('/about');
   }
 
   const onclick_donate_fn = () => {
-    navigate(`/buy`);
+    navigate('/donate');
   }
 
   return (
@@ -57,7 +57,7 @@ function NavBar() {
           <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>
         </div>
         <div className="navbar-navitem">
-          <Button label="Buy" onClickFn={onclick_donate_fn}></Button>
+          <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
         </div>
       </div>
     </div>

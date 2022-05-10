@@ -41,12 +41,6 @@
     font-size: 30px;
 }
 
-#razorpay-form {
-    width: 40vw;
-    overflow-x: hidden;
-    margin-left: 45vw;
-}
-
 .hand-waving {
     margin-top: 100px;
 }
@@ -77,21 +71,21 @@
         margin-top: 40px;
     }
 
-    #razorpay-form {
-        margin: auto;
-        margin-top: 65px;
-        width: 45vw;
-    }
-
     .hand-waving {
         margin-top: 60px;
     }
 
 }
 
-.buy-me-coffee-outlink-container {
+.donate-button-outlink-container {
     margin-top: 100px;
     margin-left: 37vw;
     width: 100vw;
     margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .donate-button-outlink-container {
+        margin-left: 7vw;
+    }
 }

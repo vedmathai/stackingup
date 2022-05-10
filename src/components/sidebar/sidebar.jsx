@@ -45,11 +45,11 @@ var SideBar = (props) => {
     var tree_view;
 
     const onclick_about_fn = () => {
-        navigate(`/about`);
+        navigate('/about');
     }
 
     const onclick_donate_fn = () => {
-        navigate(`/buy`);
+        navigate('/donate');
     }
 
     var visibleClass = props.openMenuStatus? "sidebar-visible": "sidebar-hidden";
@@ -76,7 +76,7 @@ var SideBar = (props) => {
                     <NavItem label="About" onClickFn={onclick_about_fn}></NavItem>
                 </div>
                 <div className="mobile-nav-sidebar-navitem">
-                    <Button label="Buy" onClickFn={onclick_donate_fn}></Button>
+                    <Button label="Donate" onClickFn={onclick_donate_fn}></Button>
                 </div>
             </div>
             {sidebar}
