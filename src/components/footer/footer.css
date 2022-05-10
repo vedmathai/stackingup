@@ -1,0 +1,25 @@
+.footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100vw;
+}
+
+.legal-links-container {
+    text-align: center;
+}
+
+.footer-link {
+    display: inline-block;
+    color: gray;
+    cursor: pointer;
+}
+
+.dot {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 8px;
+    width: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }

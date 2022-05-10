@@ -2,19 +2,11 @@ import './donate-page.css';
 import React, { useEffect } from 'react';
 import tip_jar from 'src/assets/tip-jar-drawing.png'
 import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
-
+import Footer from 'src/components/footer/footer';
+import DonateButton from '../../components/donate-button/donate-button';
 
 function DonatePage() {
-  useEffect(() => {
-    const script = document.createElement('script');
-  
-    script.src = "https://checkout.razorpay.com/v1/payment-button.js";
-    script.async = true;
-    script.setAttribute('data-payment_button_id','pl_JS3OwehgVuS6Q7')
-  
-    document.getElementById('razorpay-form').appendChild(script);
-  
-  }, []);
+
   return (
     <div className='donate-page'>
       <NavbarsComplex showSideBar={false}/>
@@ -38,13 +30,11 @@ function DonatePage() {
         </div>
 
       </div>
-      <form id='razorpay-form'></form>
+      <div className='donate-button-outlink-container'> <DonateButton /> </div>
       <div className='hand-waving'>
           👋
       </div>
-
-      
-
+      <Footer />
     </div>
   );
 }
