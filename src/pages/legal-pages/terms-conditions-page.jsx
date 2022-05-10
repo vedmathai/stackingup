@@ -3,11 +3,13 @@ import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom"
 import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
 import Footer from 'src/components/footer/footer';
+import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 
 
 function TermsConditionsPage() {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    pageViewGoogleAnalyticsEvent('terms_and_conditions_page');
   }, []);
   return (
     <div className='legal-page'>

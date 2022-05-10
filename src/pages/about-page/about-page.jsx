@@ -1,11 +1,15 @@
 import './about-page.css';
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 import jack_card from 'src/assets/jack-card-drawing.png'
 import NavbarsComplex from 'src/components/navbars-complex/navbars-complex';
+import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 
 
 function AboutPage() {
+  useEffect(() => {
+    pageViewGoogleAnalyticsEvent('about_page');
+  }, []);
   return (
     <div className='about-page'>
       <NavbarsComplex showSideBar={false}/>

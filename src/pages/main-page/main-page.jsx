@@ -9,6 +9,7 @@ import RightSideBar from 'src/components/right-side-bar/right-side-bar';
 import ReactMarkdown from 'react-markdown'
 import id2content_location from 'src/pages/main-page/id2content-location';
 import h1_component from 'src/components/md_components/h1/h1';
+import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 const axios = require('axios');
 
 
@@ -27,11 +28,11 @@ function MainPage() {
   useEffect(() => {
     (async() => {
       var id2content_location_dict = await id2content_location();
-      console.log("id2content_location_dict", id2content_location_dict);
       const content_location = id2content_location_dict[id];
       const response = await axios(content_location);
       const content_index = response.data;
       setMdData(content_index);
+      pageViewGoogleAnalyticsEvent('content_page' + id);
     }) ();
   }, []);
 

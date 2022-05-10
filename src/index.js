@@ -11,8 +11,29 @@ import PrivacyPolicyPage from './pages/legal-pages/privacy-policy-page';
 import RefundPolicyPage from './pages/legal-pages/refund-policy-page';
 import reportWebVitals from './reportWebVitals';
 
+const TRACKING_ID = "G-74DL3Z7TSQ"; // OUR_TRACKING_ID
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const script = document.createElement('script');
+
+if (process.env.NODE_ENV == 'production') {
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-74DL3Z7TSQ";
+  script.async = true;
+
+  document.head.appendChild(script);
+  const script2 = document.createElement('script');
+  script2.text = "\
+    window.dataLayer = window.dataLayer || [];\
+    function gtag(){dataLayer.push(arguments);}\
+    gtag('js', new Date());\
+    gtag('config', 'G-74DL3Z7TSQ');\
+    gtag('event', 'vedmaa', {'method': 'yoyo'});\
+  "
+  document.head.appendChild(script2);
+}
 root.render(
+
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<LandingPage />} />

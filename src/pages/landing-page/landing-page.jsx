@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import './landing-page.css';
@@ -6,6 +6,7 @@ import house_of_cards_drawing from 'src/assets/logo/house-of-cards-drawing.png'
 import Logo from 'src/components/logo/logo'
 import NavItem from 'src/components/navitem/navitem';
 import Button from 'src/components/button/button';
+import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 
 
 function LandingPage() {
@@ -28,6 +29,10 @@ function LandingPage() {
     src={house_of_cards_drawing}
     alt="house-of-cards-drawing"
   />
+
+  useEffect(() => {
+    pageViewGoogleAnalyticsEvent('landing_page');
+  }, []);
 
   return (
     <div>
