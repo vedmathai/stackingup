@@ -34,6 +34,13 @@
 }
 
 .content h1 {
+  font-size: 48px;
+  font-family: var(--font-family-content-text);
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.content h2 {
   font-size: 42px;
   font-family: var(--font-family-content-text);
   margin-top: 50px;
@@ -44,7 +51,7 @@
   text-decoration-color: var(--blue-color);
 }
 
-.content .h1-anchor {
+.content .h2-anchor {
     display: block;
     position: relative;
     top: -250px;

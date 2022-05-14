@@ -8,14 +8,14 @@ import NavbarsComplex from 'src/components/navbars-complex/navbars-complex'
 import RightSideBar from 'src/components/right-side-bar/right-side-bar';
 import ReactMarkdown from 'react-markdown'
 import id2content_location from 'src/pages/main-page/id2content-location';
-import h1_component from 'src/components/md_components/h1/h1';
+import h2_component from 'src/components/md_components/h2/h2';
 import pageViewGoogleAnalyticsEvent from 'src/functions/pageViewGoogleAnalyticsEvent';
 const axios = require('axios');
 
 
 
 var getHeadings = (mdData) => {
-  const regexp = /^#{1} (.*)[\n]*/gm;
+  const regexp = /^#{2} (.*)[\n]*/gm;
   const result = mdData.matchAll(regexp);
   return [...result].map(m => m.slice(1));
 }
@@ -46,7 +46,7 @@ function MainPage() {
           <div className="content">
               <ReactMarkdown
                   components={{
-                    h1: h1_component
+                    h2: h2_component
                   }}
               >
                 {mdData}
