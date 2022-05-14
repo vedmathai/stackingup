@@ -23,7 +23,7 @@ var getHeadings = (mdData) => {
 function MainPage() {
   var [mdData, setMdData] = useState('');
   var [headings, setHeadings] = useState([]);
-  const { id } = useParams();
+  var { id } = useParams();
 
   useEffect(() => {
     (async() => {
@@ -34,7 +34,7 @@ function MainPage() {
       setMdData(content_index);
       pageViewGoogleAnalyticsEvent('content_page' + id);
     }) ();
-  }, []);
+  }, [id]);
 
   headings = getHeadings(mdData);
   

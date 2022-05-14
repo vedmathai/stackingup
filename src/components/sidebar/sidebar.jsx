@@ -12,34 +12,39 @@ const axios = require('axios');
 var content_index_path = process.env.PUBLIC_URL + '/content/content-index.json';
 
 
-const json2treeview = (json_obj) => {
-    var tree_items = [];
-    tree_items = json_obj.map((tree_item_obj) => {
-        return json2treeitems(tree_item_obj)
-    });
-    return <TreeView
-        aria-label="multi-select"
-        defaultCollapseIcon={<ExpandMoreIcon />}
-        defaultExpandIcon={<ChevronRightIcon />}
-        multiSelect
-    >
-        {tree_items} 
-    </TreeView>
-}
-
-const json2treeitems = (json_obj) => {
-    if (json_obj.children) {
-        var tree_items = json_obj.children.map((tree_item_json) => {
-            return json2treeitems(tree_item_json);
-        });
-        return <TreeItem className='tree-item' nodeId={json_obj.display_name} label={json_obj.display_name}> {tree_items} </TreeItem>
-    } else {
-        return <TreeItem className='tree-item' nodeId={json_obj.display_name} label={json_obj.display_name}></TreeItem> 
-    }
-}
-
-
 var SideBar = (props) => {
+
+    const json2treeview = (json_obj) => {
+        var tree_items = [];
+        tree_items = json_obj.map((tree_item_obj) => {
+            return json2treeitems(tree_item_obj)
+        });
+        return <TreeView
+            aria-label="multi-select"
+            defaultCollapseIcon={<ExpandMoreIcon />}
+            defaultExpandIcon={<ChevronRightIcon />}
+            multiSelect
+        >
+            {tree_items} 
+        </TreeView>
+    }
+    
+    const json2treeitems = (json_obj) => {
+        if (json_obj.children) {
+            var tree_items = json_obj.children.map((tree_item_json) => {
+                return json2treeitems(tree_item_json);
+            });
+            return <TreeItem className='tree-item' nodeId={json_obj.display_name} label={json_obj.display_name}> {tree_items} </TreeItem>
+        } else {
+            return <TreeItem
+                onClick={() => onclick_treeitem_fn(json_obj.id)}
+                className='tree-item'
+                nodeId={json_obj.display_name}
+                label={json_obj.display_name}>
+            </TreeItem> 
+        }
+    }
+
     const navigate = useNavigate()
     var [contentIndex, setContentIndex] = useState([]);
     var tree_view;
@@ -52,6 +57,10 @@ var SideBar = (props) => {
         navigate('/donate');
     }
 
+    const onclick_treeitem_fn = (id) => {
+        navigate('/' + id);
+    }
+
     var visibleClass = props.openMenuStatus? "sidebar-visible": "sidebar-hidden";
     var largeScreenVisibleClass = props.showSideBar? "": "sidebar-hidden-large-screen";
 
@@ -62,6 +71,7 @@ var SideBar = (props) => {
     </div>;
 
     useEffect(() => {
+        console.log('sidebar');
         (async() => {
             const response = await axios(content_index_path);
             var content_index = response.data;
