@@ -1,18 +1,18 @@
 [
     {
-        "display_name": "Introduction",
-        "children": [
-            {
-                "display_name": "Introduction Sub",
-                "id": "introduction",
-                "content_location": "introduction/introduction.md"
-            }
-        ]
+        "display_name": "Introduction ",
+        "id": "introduction",
+        "content_location": "introduction/introduction.md"
     },
     {
         "display_name": "Design",
         "content_path": "",
         "children": [
+            {
+                "display_name": "Ideating",
+                "id": "ideating",
+                "content_location": "design/ideating.md"
+            },
             {
                 "display_name": "Introduction Sub"
             }

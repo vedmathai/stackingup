@@ -16,7 +16,6 @@ const id2content_location = async () => {
 }
 
 const recursion_helper = (json_obj, id2content_location_dict) => {
-    console.log(id2content_location_dict)
     if (json_obj.children) {
         json_obj.children.map((tree_item_json) => {
             id2content_location_dict = recursion_helper(tree_item_json, id2content_location_dict)
