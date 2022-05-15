@@ -58,14 +58,78 @@ For example, if you are the front-end engineer working on a consumer app, you ma
 And if you have a personal opinion, you can even share it, sometimes you would be the only one who knows the trade-off between two packages, and if you understand the mindset of the decision makers you can probably already make the decision for them, and when you tell them you did and they agree it was the right decision, that is time and cognitive load saved for you and them.
 
 ## I understand finding value is hard statistically, but why is it?
-1what have you found
 
-## The value questionnaire
+### Tech disruption
+Some early businesses are set up in a way that they take an existing business model and apply it to a new geography or set of customers that were not traditiionally served. Think your local grocery store. There is nothing novel about the concept of a grocery store and nor should there be. If a new grocery store appears in your neigbourhood, it is probably because the entrepreneur thinks that people are underserved in that geographical area. 
+
+One of the aspects in the unnofficial definition of a startup is tech disruption. It generally means that an idea and subsequent implementation challenged status quo and changed the way things were done. We'll look at some examples from different times in the last 150 years to today: 
+
+ * From the past, think about the transition from horse-drawn carriages to motor cars. The invention and subsequent sales of motor cars, disrupted the status-quo of horse-drawn carriages being the means of transport in a city for those who could afford them. If you see a horse-drawn carriage today it is mostly as a novelty. 
+
+ * A more recent example is the advent of the internet disrupting the status quo of telegrams and postal systems due to the speed and efficiency of emails.
+
+ * An even more recent example is the advent of **ecommerce** - buying and selling goods on the internet to have them later delivered home. Many of these disruptions take time and whiles some happen overnight, some may take years. It remains to be seen whether the ecommerce is going to completely remove brick-and-mortar stores or going to live along side them. Depending on where you look you'll find convincing opinions for both sides of the debate on the internet and the newspapers from tech pundits - those who use their knowledge and experience to comment on the present and future of a particular space of innovation in tech.
+
+ * And not all new technology that is touted as the future will also end up showing that value. The long term lasting effects of recent innovations like blockchain and NFTs are still to be proven. 
+
+### Disruption or Pushing a Wall?
+Most startups claim that they are have the potential to dirupt status quo. While that may be true, and generally good to believe, it is also notoriously hard to change status quo. If you need users to pay for what your service or product it should do one or more of the following things:
+
+ - **Speeding up an existing process**: Earlier to buy shares and take part in stock trading, one had to use the services of a broker, who would take orders by a telephone, call their colleague on the trading floor and the colleague would place the order with the exchange. One can imagine how many steps this requires. And given the number of humans involved, the process is going to be prone to errors and high variability. In the early 2000's most exchanges moved to trading online. This has reduced the time taken to place an order to less than a second, increasing trade volume and improved efficiency.
+
+ - **Increasing availability**: Except in some specific cases that involve agriculture or similar interests most businesses that have a physical side of it start in urban areas giving priority to the largests geogrpahically or culturally. Therefore just because an idea exists in implementation it doesn't mean it has found a way to scale across geographies or people. Therefore a startup that can take an existing idea that works for one set of geographies or people and is able to apply it to another set of people is also disruptive to the society that those people live in.  
+
+ - **Making goods and services cheaper**: The improved range and speed of communication that the internet enables, quite literally decreases costs due to the concept of **economies of scale**. One example is that of cab-hailing platforms. Taxies existed before but it was always a pain to hail one. Drivers would have to roam the streets in search of possible riders. By increasing availability the costs attributed to roaming and waiting for the drivers have reduced. Amazon AWS or other cloud services lease computers that can be accessed over the internet for computation. Earlier if a company needed a server, they would have to build and assemble one, and if it is not being used all the time, it is just wasted costs. But with AWS, a comany can lease the computer for exactly the amount of time they are using it, paying for only what they use. This decreases overall costs since, through AWS, multiple companies are using sharing the costs for the actual physical server at Amazon's premises.  
+
+ - **Access to Goods, Content or Services**: Though Netflix and YouTube were the disrupters for how movies, TV shows and videos are consumed with access to content on demand. Food ordering applications disrupted how restaurant patrons buy food from restaurants. These business took existing ideas of content suppliers and food delivery and improved the accessibility, reach and speed, through the use of improved workflows for both the users, restaurants and delivery personal. What would have earlier meant having individual restaurant staff being able to take orders, the restaurant having delivery persons employed and users know what and how to order from a particular has to now moved to a shared economy where the user has access to more restaurants and is able to discover more dishes and locations, the restaurant can reduce costs by offloading the ordering and delivery process to the food delivering business.
+
+ Does your idea do any one of these? The more number of the above attributes it has the better it is. It may become very hard to make money if none of these aspects are there to your business, because it may become hard to ask people to part with their money for your goods or service. There are a lot of goods and service out there that are competing for the same amount of money, time or energy that is available to people, they have to be incentivised to give you that money that they could have spent elsewhere or saved up for later, and there is not better incentive than to feel like this was money well spent.
+
+ ## Building a Moat
+ Over time if it so happens that you and your company are one of the lucky ones that were able to find this value, this raises a new problem for you. Other companies will want to have their piece of the pie and enter your space. Again there would be multiple factors that govern how much of your pie they are going to grab. We cover this in more details on this page.
+
+## Sustainability
+We have spoken about value being a driving force for understanding what you are trying to build, but we haven't spoken about the sobering counter-balance of, 'at what cost is this value provided?'
+
+As enumerated below, this cost doesn't have to necessary only mean money, but also laws and ethics. We cover some of these in more detail in later chapters but a few pointers to think about here:
+
+### Money 
+In the lifecycle of a startup, one generates capital, kickstarts the business and then the business is supposed to power itself. This can only happen if the idea is able to generate money. We have aluded to this when talking about value, when we mentioned that a measure of how valuable an idea is if someone is willing to pay for the value they see from your idea. Any of the old big businesses have gotten there by posting profits year on year and these profits have come from end users.
+
+There are also multiple ideas that sound very good on paper and pretty valuable, but unfortunately there is not possible path to profitability. For example, taxi-hailing companies have become so intertwined with our lives now that we can't imagine a world without them. But there is a fine-line that they tread between ride costs, paying the driver and running their business. There is an upper limit of how much a rider is willing to pay for a given ride distance given their budgets. And there is a lower limit below which the business is just not tenable for the driver. If the cost of paying the driver, and running their business go above the upper limit their customer base is willing to pay, the business becomes unviable.
+
+You will have to make this kind of long term analysis over the idea to see whether there is even scope of long term profitability. And as mentioned earlier the proof is only in the pudding and implementation. But if aren't at least able to explain a path to profitability, to is going to be very difficult for the path to suddenly appear.
+
+### Law and Ethics
+There are many ideas out there that probably can make money and be valuable, but are not allowed by hard laws. For example, some countries have a list of banned goods that cannot be sold. You probably will not be allowed to start a business and can potential make yourself vulnerable to litigation if you try. There are many business ideas that stradle this line of what is lawful and fall under the grey area. It is always best to ratify your idea with lawyers if you feel there is a need to.
+
+There is an even looser line of what is an ethical business, and while the law can be fuzzy in some cases, ethics can be notororiously fuzzy, and informed by politics in many cases. We shall cover ethics in a later chapter. But when thinking of your idea you should consider such questions. For example, in grocery delivery businesses it is not lawful to pay a minimum wage to delivery personel and make them work till the maximum allowed hours per day. However, is it ethical, would you as a software engineer agree to work for minimum wages at a company just because the company can legally do so?
+
+Another case is the sale of personal data. Some websites make some extra money by sharing personal data that they have collected from users that use their site. Since this is a new age problem in many jurisdictions the law is not very clear on what is allowed. And even if they are, in many cases it is less that what many people are comfortable with. So you will have to worry about if your business model is based on something that is legally allowed but what many users will be uncomforable even using your application?
+ 
 ## The Gap - putting two things together
-Write some 15 different problems and how they solved for it.
+There is a saying among those who research and search for extra terristorial life, 'extraordinary claims require extra ordinary proofs.' This means that any signs of alien life can and will be accepted only if the proof is beyond reproachable. The opposite effect is if the claim is too good to be true, it probably is not. In the world of startups, bigger financial or value return a startup idea has the more it the bigger and unreproachable the idea should be.
+
+The way to do that is to stand on the shoulders of giants, i.e., the work of people that have come before you and understand where the gap is in their implementation. This is where innovation lies. For example, somebody originally took the concept of taxies added communications and geo-locations that that smart phones supply and created the ride hailing apps.
+
+Similarly, someone - Netflix - took recommendations engines - an engine that suggests new content based on the content you have just consumed - and applied them to movies to create movie recommending sites, some one else - Spotify - saw the success there and applied them to music.
+
+This means the gap may be the algorithm or the space to which an algorithm is applied to. When trying to ideate, it is best to read and understand your particular domain really well, then read beyond the domain to see what algorithms or trade tricks others are applying their space and see whether you can apply the same the your space and then ask whether all of the above discussion about value, money and ethics apply to this space. If it does then you have identified a potential gap and now only have to execute and serve the pudding as proof.
+
+How does this tie in with the setence mentions above, 'extraordinary claims require extra ordinary proofs.' If you take an existing algorithm and apply it to a new space, it may be easier for stakeholder to draw parallels, like in the case of applying recommendation engines to music content. It is easier to use the success in movie recommendations to say it will now work for music. It would have been relatively harder to prove the potential in ride-hailing apps before it was a phenomenon, because it was unclear whether drivers would want to use it and break away from status quo or not. It would be even harder to talk about cab hailing if your business involved setting up of taxi services also. When the time came to set up local delivery service, the success of drivers willing to use applications to get rides were used as the starting point when the entire new fleet of delivery persons had to be created in the ecosystem when there were none.
 
 ## Should you even try to do this?
-It is voodoo. But you'll be able to notice it when you hear it. Even then you don't know if it will work.
+Given what is written here, starting a startup journey, or heck, even working for one may seem very intimidating. First one has to come up with an original idea and then prove value and make money. Why even go through it one may ask.
 
-## Staying on track
-What questions to ask.
+The answer can be a very personal one. Many people like the thrill of building something and others like the potential jackpot that this journey promises even if it is risky.
+
+But the main takeaway from this page is that once you are on this journey are even working for a startup, being cognizant of the risks involved can go a long way to help mitigate the unfavourable outcomes. The startup world moves fast and there are always multiple factors but the best of whom survive have a at least a thumb on all these aspects. This book, therefore tries to give an engineers spin on starting up from an engineers point of view. The best way to look at it is, once you have the this toolkit under your belt, atleast all you have to worry about are external market forces, which is what the game is anyway. 
+
+## The Value Questionnaire
+As a conclusion, the following questionnaire compiles questions that you may ask yourself to understand your proposed idea better and whether from your given understanding at the moment it has any potential for value of not.
+1. Who are you creating this for.
+1. How are they going to use it.
+1. If this product didn't exist what is the current method your potential users use to get the same end point.
+1. Is your product going speed up the process, make it more efficient, increase availability or improve the content available?
+1. Does your product have a path to profitability?
+1. Is your product legal and ethical to your best knowledge?

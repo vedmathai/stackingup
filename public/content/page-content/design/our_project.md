@@ -6,3 +6,8 @@
 
 ## Importance of knowing being on track.
 ## Possible pitfalls.
+
+## Talk about users lifes. Persona
+
+## Build vs buy
+## think like a director
