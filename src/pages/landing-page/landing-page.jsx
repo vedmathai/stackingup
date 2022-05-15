@@ -45,7 +45,7 @@ function LandingPage() {
             {landing_page_image}
           </div>
           <div className='landing-page-heading'>
-              A web book on all the engineering you would need for a software startup.
+              A web book on ideating, engineering and managing a software startup.
           </div>
           <div className='nav-items-container'>
             <div className="landing-page-nav-item">
