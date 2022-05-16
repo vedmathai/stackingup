@@ -1,4 +1,4 @@
-# Ideating
+# Value
 
 ## How do you know what you are building?
 Before one starts hammering out lines of code, one needs to know towards what end they are trying to hammer out these lines of code. This is not in any form a profound statement, but often times we forget that we need to know this. Many of us may come from the world of competitive programming or university level assignments. In a way we are spoiled because the end goal is predefined and we just have to get there. In fact, there is almost always an understanding that the answer is out there, it is just that we don't know it. If we look hard enough we are bound to find it in the depths of the internet - Google almost guarantees it.
