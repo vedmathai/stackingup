@@ -5,61 +5,298 @@
         "content_location": "introduction/introduction.md"
     },
     {
+        "display_name": "Idea",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Value",
+                "id": "value",
+                "content_location": "idea/value.md"
+            },
+            {
+                "display_name": "Types of Startups",
+                "id": "types-of-startups",
+                "content_location": "idea/types-of-startups.md"
+            },
+            {
+                "display_name": "User Flows",
+                "id": "user-flows",
+                "content_location": "idea/user-flows.md"
+            },
+            {
+                "display_name": "Our Product",
+                "id": "our-product",
+                "content_location": "idea/our-product.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Building Blocks",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Infrastructure",
+                "id": "infrastructure",
+                "content_location": "building-blocks/infrastructure.md"
+            },
+            {
+                "display_name": "Architectures",
+                "id": "architectures",
+                "content_location": "building-blocks/architectures.md"
+            },
+            {
+                "display_name": "Languages and Frameworks",
+                "id": "languages-and-frameworks",
+                "content_location": "building-blocks/languages-and-frameworks.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Team",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Team Organization",
+                "id": "team-organization",
+                "content_location": "team/organization.md"
+            },
+            {
+                "display_name": "Communications",
+                "id": "team-communication",
+                "content_location": "team/communication.md"
+            },
+            {
+                "display_name": "Planning",
+                "id": "team-planning",
+                "content_location": "team/planning.md"
+            }
+        ]
+    },
+    {
         "display_name": "Design",
         "content_path": "",
         "children": [
             {
-                "display_name": "Ideating",
-                "id": "ideating",
-                "content_location": "design/ideating.md"
+                "display_name": "User Flows",
+                "id": "design-user-flows",
+                "content_location": "design/user-flows.md"
             },
             {
-                "display_name": "Introduction Sub"
+                "display_name": "Flows on Paper",
+                "id": "design-flows-on-paper",
+                "content_location": "design/flows-on-paper.md"
+            },
+            {
+                "display_name": "Wireframing",
+                "id": "wireframing",
+                "content_location": "design/wireframing.md"
+            },
+            {
+                "display_name": "User Flows Validation",
+                "id": "user-flow-validation",
+                "content_location": "design/user-flow-validation.md"
+            },
+            {
+                "display_name": "Our Flows",
+                "id": "our-flows",
+                "content_location": "design/our-flows.md"
+            },
+            {
+                "display_name": "Our Wireframes",
+                "id": "our-wireframes",
+                "content_location": "design/our-wireframes.md"
             }
         ]
     },
     {
-        "display_name": "Working in a Team",
+        "display_name": "Datamodel",
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "Why a Datamodel",
+                "id": "why-datamodel",
+                "content_location": "datamodel/why-datamodel.md"
+            },
+            {
+                "display_name": "Designing a Datamodel",
+                "id": "designing-a-datamodel",
+                "content_location": "datamodel/designing-a-datamodel.md"
+            },
+            {
+                "display_name": "Designing our Datamodel",
+                "id": "designing-our-datamodel",
+                "content_location": "datamodel/designing-our-datamodel.md"
+            },
+            {
+                "display_name": "Implementing our Datamodel",
+                "id": "implementing-our-datamodel",
+                "content_location": "datamodel/implementing-our-datamodel.md"
+            },
+            {
+                "display_name": "Autogenerate Datamodel Code",
+                "id": "autogenerate-datamodel-code",
+                "content_location": "datamodel/autogenerate-datamodel-code.md"
             }
         ]
     },
     {
-        "display_name": "Setting up a Server",
+        "display_name": "API",
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "What are APIs",
+                "id": "what-are-apis",
+                "content_location": "apis/what-are-apis.md"
+            },
+            {
+                "display_name": "Designing APIs",
+                "id": "designing-apis",
+                "content_location": "apis/designing-apis.md"
+            },
+            {
+                "display_name": "Designing our APIs",
+                "id": "designing-our-apis",
+                "content_location": "apis/designing-our-apis.md"
+            },
+            {
+                "display_name": "Serving our APIs",
+                "id": "serving-our-apis",
+                "content_location": "apis/serving-our-apis.md"
             }
         ]
     },
     {
-        "display_name": "Setting up a Database",
+        "display_name": "Database",
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "What is a Database",
+                "id": "what-is-a-database",
+                "content_location": "database/what-is-a-database.md"
+            },
+            {
+                "display_name": "Setting up a Database",
+                "id": "setting-up-a-database",
+                "content_location": "database/setting-up-a-database.md"
+            },
+            {
+                "display_name": "Designing a Database",
+                "id": "designing-a-database",
+                "content_location": "database/designing-a-database.md"
+            },
+            {
+                "display_name": "Setting up our Database",
+                "id": "setting-up-our-database",
+                "content_location": "database/designing-our-datamodel.md"
+            },
+            {
+                "display_name": "Querying our Database",
+                "id": "querying-our-database",
+                "content_location": "database/querying-our-datamodel.md"
             }
         ]
     },
     {
-        "display_name": "Authorization",
+        "display_name": "Front End",
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "Front-End Classifications",
+                "id": "front-end-classification",
+                "content_location": "front-end/front-end-classifications.md"
+            },
+            {
+                "display_name": "Model-View-Controller",
+                "id": "model-view-controller",
+                "content_location": "front-end/model-view-controller.md"
+            },
+            {
+                "display_name": "React",
+                "id": "react",
+                "content_location": "front-end/react.md"
+            },
+            {
+                "display_name": "CSS",
+                "id": "css",
+                "content_location": "front-end/css.md"
+            },
+            {
+                "display_name": "CSS-Animations",
+                "id": "css-animations",
+                "content_location": "front-end/css-animations.md"
+            },
+            {
+                "display_name": "External Libraries",
+                "id": "external-libraries",
+                "content_location": "front-end/external-libraries.md"
+            },
+            {
+                "display_name": "Our Front-End Design",
+                "id": "our-front-end-design",
+                "content_location": "front-end/our-front-end-design.md"
+            },
+            {
+                "display_name": "Implementing our Front-End",
+                "id": "implementing-our-front-end",
+                "content_location": "front-end/implementing-our-front-end.md"
             }
         ]
     },
     {
-        "display_name": "Adding a Front End",
+        "display_name": "Authentication and Authorization",
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "What is Authentication and Authorisation",
+                "id": "what-is-authentication-authorization",
+                "content_location": "auth/what-is-authentication-authorization.md"
+            },
+            {
+                "display_name": "Roles",
+                "id": "roles",
+                "content_location": "auth/roles.md"
+            },
+            {
+                "display_name": "Authentication Classification",
+                "id": "authentication-classification",
+                "content_location": "auth/designing-our-datamodel.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Business Logic",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "What is the Business Logic",
+                "id": "what-is-business-logic",
+                "content_location": "business-logic/what-is-business-logic.md"
+            },
+            {
+                "display_name": "Our Business Logic",
+                "id": "our-business-logic",
+                "content_location": "business-logic/our-business-logic.md"
+            },
+            {
+                "display_name": "Implementing our Business Logic",
+                "id": "implementing-our-business-logic",
+                "content_location": "business-logic/implementing-our-business-logic.md"
+            },
+            {
+                "display_name": "Algorithms",
+                "id": "algorithms",
+                "content_location": "business-logic/algorithms.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Machine Learning",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "What is Machine Learning",
+                "id": "what-is-machine-learning",
+                "content_location": "machine-learning/what-is-machine-learning.md"
             }
         ]
     },
@@ -68,25 +305,55 @@
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "CI/CD",
+                "id": "ci-cd",
+                "content_location": "deployment/ci-cd.md"
+            },
+            {
+                "display_name": "GitHub Actions",
+                "id": "github actions",
+                "content_location": "deployment/github-actions.md"
+            },
+            {
+                "display_name": "Digital Ocean App",
+                "id": "digital-ocean-app",
+                "content_location": "deployment/digital-ocean-app.md"
+            },
+            {
+                "display_name": "Kubernetes",
+                "id": "kubernetes",
+                "content_location": "deployment/kubernetes.md"
+            },
+            {
+                "display_name": "DNS",
+                "id": "dns",
+                "content_location": "deployment/dns.md"
             }
         ]
     },
     {
-        "display_name": "Maintaining the System in Production",
+        "display_name": "Maintainance",
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
-            }
-        ]
-    },
-    {
-        "display_name": "Adding Machine Learning",
-        "content_path": "",
-        "children": [
+                "display_name": "Testing",
+                "id": "unit-testing",
+                "content_location": "maintainance/unit-testing.md"
+            },
             {
-                "display_name": "Introduction Sub"
+                "display_name": "Logging",
+                "id": "logging",
+                "content_location": "maintainance/logging.md"
+            },
+            {
+                "display_name": "Analytics",
+                "id": "analytics",
+                "content_location": "maintainance/analytics.md"
+            },
+            {
+                "display_name": "Feedback Loop",
+                "id": "feedback-loop",
+                "content_location": "maintainance/feedback-loop.md"
             }
         ]
     },
@@ -95,7 +362,84 @@
         "content_path": "",
         "children": [
             {
-                "display_name": "Introduction Sub"
+                "display_name": "Good Visualizations",
+                "id": "good-visualization",
+                "content_location": "visualization/good-visualization.md"
+            },
+            {
+                "display_name": "D3",
+                "id": "d3",
+                "content_location": "visualization/d3.md"
+            },
+            {
+                "display_name": "Our Visualizations",
+                "id": "our-visualizations",
+                "content_location": "visualization/our-visualizations.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Accessibility",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Why Accessibility",
+                "id": "why-accessibility",
+                "content_location": "accessibility/why-accessibility.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Security",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Why Security",
+                "id": "why-security",
+                "content_location": "security/why-security.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Third-Party APIs",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Build vs. Buy",
+                "id": "build-vs-buy",
+                "content_location": "third-party-apis/build-vs-buy.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Ethics",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Why Ethics",
+                "id": "why-ethics",
+                "content_location": "ethics/why-ethics.md"
+            }
+        ]
+    },
+    {
+        "display_name": "Startup Lifecycle",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Funding",
+                "id": "funding",
+                "content_location": "startup-lifecycle/funding.md"
+            },
+            {
+                "display_name": "Growth",
+                "id": "growth",
+                "content_location": "startup-lifecycle/growth.md"
+            },
+            {
+                "display_name": "Moat",
+                "id": "moat",
+                "content_location": "startup-lifecycle/moat.md"
             }
         ]
     }
