@@ -56,6 +56,11 @@
         "content_path": "",
         "children": [
             {
+                "display_name": "Product Managing",
+                "id": "team-product-managing",
+                "content_location": "team/product-managin.md"
+            },
+            {
                 "display_name": "Team Organization",
                 "id": "team-organization",
                 "content_location": "team/organization.md"
