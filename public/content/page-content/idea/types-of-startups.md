@@ -83,7 +83,7 @@ Of course, one does not have to be either API based. One can be both, where the 
 To see the correlation with the previous point on b2b or b2c. It is rare that a layman consumer would want to use APIs. Probably few coding friendly consumers may choose to use APIs to make their everyday life better, but that is the exception not the norm. However, businesses may want and prefer both an API-based solution and a UI-based solution. Often, the UI can be used for debugging specific cases, or for different user flows.
 
 ## Technology first versus Operations versus Content first
-Deep Tech is a term used nowadays to talk about specific algorithms that do specific tasks. These algorithms are complex to build and the value they provide are like diamond-mines. Entire companies can be built around just providing access to a particular set of algorithms. 
+**Deep-Tech** is a term used nowadays to talk about specific algorithms that do specific tasks. These algorithms are complex to build and the value they provide are like diamond-mines. Entire companies can be built around just providing access to a particular set of algorithms. 
 
 For example, Google provides access to it's speech-text-engine or optical character recognition engine for fee through APIs or even a UI as mentioned above. The algorithm is the product. As a user you provide some data, the algorithm is run on that data and you are provided with the output.
 
@@ -91,7 +91,4 @@ Often barring some extra scaffolding, that running the algorithm is the only ope
 
 The **complex operations** that are the crux of certain startups include logistics, data-curation, food-delivery among others. Sometimes the tech is important, for example, Uber's driving matching algorithm can be valuable, but the more important aspect of these startups is the network of drivers they have setup and the ability to handle that many of them and monitor trips and payments. All of the other arms of the company - marketing and customer service - will be setup to run the main operations of matching the driver and monitoring the trip.
 
-Content - netflix and linkedin
-
-Build to support the operations of the business
-The Tech is the powerful IP and the operations work around that.
+**Content** startups or businesses fun on the quality and quantity of their content. In the beginning Netflix was unique in its offering, but now there are streaming services dime a dozen. There are many job and business networking platforms and the technology behind building and running them is not as complex as the examples mentioned above for deep-tech startups, but the power of Linkedin comes from the sheer number of people on it and posting about their professional lives. The selling point for these startups are their content. Streaming services increasingly aim to the get the best movies and TV shows, even paying top dollar for producing them. All the tech at these startups are built around supporting the content - acquiring, storing and serving it. The algorithms are also built around recommendation systems or rather how to serve the most pertinent content to each individual customer, so as to improve the value that they get for the time spent on the platform.

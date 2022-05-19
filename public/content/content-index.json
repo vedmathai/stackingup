@@ -45,6 +45,16 @@
                 "content_location": "building-blocks/architectures.md"
             },
             {
+                "display_name": "User Flows and Architectures",
+                "id": "user-flows-and-architectures",
+                "content_location": "building-blocks/user-flows-and-architectures.md"
+            },
+            {
+                "display_name": "Build vs. Buy",
+                "id": "build-vs-buy",
+                "content_location": "building-blocks/build-vs-buy.md"
+            },
+            {
                 "display_name": "Languages and Frameworks",
                 "id": "languages-and-frameworks",
                 "content_location": "building-blocks/languages-and-frameworks.md"
