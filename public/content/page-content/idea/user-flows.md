@@ -74,38 +74,124 @@ To start a particular user flow, usually the user would have to press a button o
 Other more generic navigation options are the back button and the home button. If the application or the browser maintains a history of pages visited by the user, the user can use the back button to go back one step in history. On a mobile phone there may be a back button that belongs to the or a gesture that performs a back button. Browsers and mobile applications will interpret this signal as a navigation back one step in the string of visited pages. The home button can be used to take the user back to the landing page, incase they have gone deep into some chain of pages and now want to reorient themselves back in the application. The modern design nowadays is to make the logo of the application clickable and by clicking it the app will navigate to its home.
 
 ### Search
+E-commerce websites have millions of products in their catalog. The number of articles on Wikipedia are of a similar magnitude. One way for people to consume these articles or find products are by scrolling through a list, probably in alphabetical order in order to find it. To many of you reading this may seem ludicrous that I am even explaining what search is, but just a couple of decades ago this was how most people bought products or searched for pieces of knowledge from an encyclopedia. They would go through and index.
+
+This is simply not feasible for when the number of articles are in the millions. Thus a search engine that is indexed on the data of your app can help users who know what they are looking for by filtering the items or articles. By using some statistics based on the words in the users query and frequency statistics of words in the articles or the titles of the goods listed, search engines can filter and show customers very pointed articles or products as per their query.
 
 ### Sort
+Users of ecommerce sites will be familiar with this action. Items have attributes such as cost, relevance, popularity etc. The user can have the list sorted in a given order, i.e., ordered with lowest price to higest, or lowest relevance to highest.
 
-### Filter
+The use of sorting can help people get good deals when trying to buy an item or they may be able to choose airline tickets by the earliest departure time.
+Sorting is quintessential ability for any application that has a lot data. This is a data exploration tool, where unlike search which tries to narrow down, sort can to make sense of data for which users don't know exact words or placing similar objects that have similar attributes together.
 
-### Add to cart
+### Filters
 
-### Checkout
+Another action is that of filtering. Filtering is similar to search, but the difference is set of attributes and their possible values are enumerate and the user can build a query based on selecting one or more values per attribute. In such a case all objects that have the given selected values for each attribute will be shown on screen while the rest are just ignored. What constitutes a filter type and set of values is a decision point for designers. Too many filter types and it can be very hard for users to parse all of them, and too less can lessen the value of the filters themselves. For example, one may have a the filter color. When used for furniture or clothing, more values for colors make sense but too many values for colors for example, three different values for just blue, may seem overkill. But this is not true if you are trying to sell wall paint online, then more specificity is good.
 
-### Manipulate Form Information
+Another way to measure how you are filtering can be through measure the amount of filteration that is happening. One can measure the ratio of elements shown after fitering to before filtering. If ratio is too low, say zero or really close to zero for many of the filter options, you are probably too fine-grained in defining the set of filter values.
+
+Filters also allow combination of filter values. If multiple values of the same filter type are selected, for example, both orange and blue are selected from the colour filter menu, this means that items that either are marked as orange or blue are to be shown. But when values are marked across filters then the items shown will have to have both the attributes. For example, if the colour 'orange' is picked and the filter value 'shirt' is picked from a filter called 'garment type', which have as other values, 'pant,' 'jeans', 'T-shirts,' then only items that are both of 'shirt' garment type and which are orange in colour will be picked. In other words only 'orange shirts' will be shown.
+
+### Add to cart and Checkout
+This may seem like a userflow that is overtly pertinent to those who are making ecommerce sites. That may be true and almost any website nowadays has something to sell, and when they do, they would have most definitely implemented a checkout flow. The flow nowadays is pretty standard:
+ - Users add items to a list called the cart while browsing.
+ - When they are done browsing, they are are allowed to pick and choose the items from the cart again.
+ - When done they confirm and update information such as the deliver address and phone numbers.
+ - They choose a payment method and pay.
+ - If the payment was successful they are shown a success page and their list of orders are updated.
+ - If the payment was not successful they are shown a page that informs them of the same and prompts them to retry.
+
+This is not without reason very standardized. Following the steps here, you would realize that almost with no deviation it follows the exact same steps that you would follow at a grocery store.
+
+Flows that have been polished to the bone like this is a good example of templateable flows that one should look for, when building applications. For some folk this is a good thing. Since there is a well worn path, there is not much to think about and debate and at most the decisions would be about what information to collect at checkout. Case in point are vendors such as Shopify, who allow users to build ecommerce sites on their platform with literally no coding. In fact they provide the same checkout flow to all of their websites. But with ecommerce sites now dime a dozen and each battling for every per cent of marketshare, they have trained their sights on this flow and asked how to make it even faster, what step can be skipped to make the flow even faster. But when flows like this are so streamlined that it is almost impossible to remove a step, that's when the costs of innovation go up. Think about how you could skip some steps in the above flow, if you do have one we are sure you can let one of the designers at ecommerce sites know and they would have a job for you waiting.
+
+### Customer service
+Most consumer facing applications will implement some form of this. In old days - 20 years ago - most businesses would implement call centers with customer service executives who were happy to help you over the phone. As much as it feels comfortable for users to know that they when they have a problem with their service, all they have to do is pick up the phone and complain, companies have realized that many of these queries do not actually require a human executive to talk to the customer.
+
+Some of the low cost methods that designers use are to add a FAQ - frequenty asked questions - section. The hope is that unless user have a very specific problem that pertains only to them, they will be able to find answers easily in these listed questions.
+
+Other companies would add an ability to chat with a human executive, instead of a call. This is faster and also allows executives to deal with mutliple queries at the same time, and if the question is a usual one they can pick an answer from a similar list of FAQs available on their side.
+
+Probably the most interesting innovation in recent years in this space is the use of chatbots to help with customer queries. At the outset, it should be said that at the current state of the art it is difficult to aim to replace human executives entirely with just chatbots. There are still many complicated queries and situations that are very hard for a non-human or rather just an algorithm to parse and take action on. But, that being said, the way to understand the use of these chatbots are as a more powerful search system on the set of FAQs. Instead of just displaying a list of FAQs and expecting a user to read through the whole list to find a question similar to theirs, they can just ask the question to the chatbot. The user interface of the chatbot is very similar to a chat terminal the user would have used if they were talking to a real human. This reduces the congnitive overload for them. This allows to them feel comfortable asking a question similar to how they would have asked a human operator in their own natural language. The engine at the back then tries to map their query to a question listed in the FAQs and answer the question. 
+
+### Maps
+Maps are an interesting break from other user flows. Most other user flows involve one of inputing or reading textual or tabular data. The input artifacts for these involve buttons, text fields or similar text-based inputs such as dropdown menus or radio buttons. The ways to consume this data involve similar text-based artifacts. Maps are unique in that they are one of the most widely consumed userflows are based on a canvas. This is different because the shapes created and the exact relationship between points on the screen is the very data being consumed. In textual and tabular data the interactions are mostly limited to clicking, scrolling and typing. While in maps the set of interactions change to zooming, multi-directional scrolling, rotating apart from the usual typing and clicking. Even displaying the map itself is complicated as locating points with near pixel-perfection is a specialized task. Maps are also one of the user-flows that make heavy use of a hardware component of mobile devices, that being the GPS system, that uses satellites to locate the device properly and exactly on the map. 
+
+This along with the fact that build geographical data that back the maps is notoriously difficult to get right, forces designers to just use maps from say Google or Open-Street Maps. We explore this point in more detail in [build vs. buy](/build-vs-buy). Given the hooks customizability that these vendors provide make it so that there is almost no downside of using their services. This is why you would see Uber or food-ordering applications layering their applications around a map. We mentioned this in the [value](/value) page, but the point bears repeating.
+
+But that being said, the value provided from maps is just immense. Food-ordering, ride-sharing and multiple logisitics applications wouldn't exist the way they do without maps and their data. And most of the value comes from just a few enumerable features that maps are capable of:
+ - Locating points on the map canvas.
+ - Drawing lines between points on that canvas - for showing the path between two points.
 
 ### Create and manipulate account details
 
+## Abstract User flows
+The previous set of user flows were very specific. But given their specificity, they do not cover all possible flows in all apps. It is impossible to cover in such detail all flows in all apps since there is a long tail of them and each one will be different and domain specific, but what we can do is try to build a more general classification of user flows. This may be harder to follow, but having this classification at the back of your head will help you understand how to navigate your own apps user journeys once you identify which of these buckets they fall under.
+
+### Display Textual and Tabular Information
+Probably the simplest of all userflows by far. Case in point, during the early years of the internet, this was the only purpose of the internet: many websites would be built with pure text, there wouldn't even be any design. One website today that is reminiscent of life back then is the [Berkshire Hathaway]() website. The company that run by Warren Buffer and Charlie Munger. Turn the years over and Wikipedia established itself as site where users consume mostly and only textual data. FAQ pages, government sites, blogs, medium, twitter etc. are all descendents of the the early websites where content and displaying text was the only thing available. Often all it takes is some [HTML and some CSS](), to build.
+
+Given this, one design aspect to look out for is how to display dense information in a way that is easily consumable by users. Too dense information and in small font can be hard for user to read. There is also the 80 character rule for the width of paragraphs. Users find it harder to read text that don't fit into columns that are smaller that 80 characters. Of course this is not hard and fast, for example, wikipedia allows text to flow almost from edge to edge on wide screens and novels do the same. Print magazines and newspapers follow this rule for this reason, even though they have the space to go edge to edge, they limit their paragraph widths to create columns that are then placed next to each other. Another example is that of Medium, they limit their columns on widescreens for easy reading.
+
+Similar to the question of dense textual data, is the question of what do you do as a designer for dense tabular data. It may not be obvious because of the lack of borders but the search listing page of Google is actually display of textual data. Here the columns are probably of the form of 'Main header,' 'Sub heading,' 'URL.' etc. There are too many styles and methods to display textual and tabular data. But two interesting aspects that make web pages stand out with their interactability is ability to display an abreviated version of the data in the table, and allow the user to click to know further. This, like Google, create a context and focus design, which first displays the data in the context of all the other data to the user. And then the user can then click on a piece of information or row to know more or probably be shown more information. Most data-driven apps will be designed as such. Email inboxes are another example of this, where all the emails are shown first for context, with only the sender and subject or the abridged first line of the email displayed. The user can then click on an email to read more of the text. This generic form is what most productivity and console applications are based on.
+
+### Manipulate Form Information
+If the display of textual and tabular data is one of the most bread and butter use cases of the web, the other is its equal and opposite number, the form. The interactability of the internet made it what it is and different from other sources of media that are broadcast only, such as radio and television. The form allowed users to create and push data back into the internet.
+
+The markup language HTML is to webpages what steel girders are to buildings, it is the scafolding on what the rest of page sits on. HTML offers small atomic units such as a button or a text field, and the smallest describable form is an input field, a label and a button that triggers whatever information that has been entered into the input field over the internet.
+
+Now there are cleverer ways to do this, you don't even need the button, as text is typed into the field that information can continuously be sent over the network.
+
+Entering text data may the most easily understood version of form inputs but over the years many primitives have been created and are now well understood form elements - this list is not exhaustive and only indicative:
+ - Text fields: One can enter text into these fields in the webpage.
+ - Buttons: On clicking the button some action will be executed by the page.
+ - Radio buttons: When there is a set of options and only one of them can be selected.
+ - Checkboxes: When there is a set of options and none, some or all can be selected.
+ - Dropdown box: Similar to radio buttons, when there is a set of options and only one them can be selected, but dropdown boxes make use of the interactivity of the page to hide all the options unless clicked on, at which point a list is displayed.
+ - Date inputs: These are specialized inputs that can take only a date as acceptable values. To improve the validation at the time of input itself users will be shown a calendar which they can interact with to select a date.
+
 ### Start a Job
+Some specialized tasks such as document format conversion, analysis of documents or videos on server may take some time to process. User flows that have such processes usually involve the steps of:
+ - Collecting the required data to be processed on the front end.
+ - Sending a request to the server at the back to start the process, imagine a server as another computer running on the internet. We'll talk about more about what a server is later.
+ - Letting that process run on the server.
+ - Periodically pinging the backend to see whether the job has been completed.
 
-### Consume an Output
+To the user, the feeling is that they have submitted a job for processing, wait for the processing to get over and when the processing is over they will be informed. As an analogy it is similar to toasting bread on a popup toaster. When the lever is pulled down, the job has been submitted, the toaster performs the process which in this case is toasting, and at then of the process the bread is popped out, visually and audibly indicating that the process is over.
 
-### Display Textual Information
+The major difference between this and say a task such as opening an email is the user's perception of what is real-time. There is no strict definition of what consitutes real-time, but the feeling is that when you provide and input to the system there is no perceptible lag or at least no perceptible step between the input and the expected response. When something has to be real-time or not is completely based on user expectation. They may be willing to wait a few minutes to convert a file from one format to another but they may not be willing to wait the same amount of time to open an email because they expect loading an email to be a faster process.
+
+Most of the processing done in the web are done on shared computing devices. If you are working on a laptop or a desktop, the entire power of the CPU or brains of the computer are dedicated to you and your tasks, however, due to multiple reasons of scale the machines that run the internet are shared among multiple users. This means that when the user submits something there may not be any resources available at that moment to service that request. Some systems will wait for a while and just throw and error to the user requesting them to try again in the hope that whatever was using the resource would be done with the resource and the resource would have been freed up now. An alternate experience that developers provide is that of creating and displaying an explicit sense of a job queue to the users. Even though the job will take some time to complete, seeing a response from the server and their position in the queue counting down over time allays their fears of having been forgotten about by the system.
+
+### Upload and Download Objects
+Instead of consuming data by having them rendered by your browser, data can be queried and downloaded onto the local filesystem. This is most popular for documents such as PDFs and for software packages that can be run on the local system. Other files such as videos and photos can also be downloaded. 
+
+The complementary action to this would be to upload data from the local system to the server. Users will be allowed to choose files from their local system which then will be converted to some binary data and sent to the server. The server will then store this file somewhere.
+
+There are now applications such a Dropbox or Google Drive, that allow users to upload their data and store it on the companies' computers. This is similar to having your harddrive elsewhere and yet connected to your computer through the internet. 
 
 ### Play Media
+Videos and music are sent over the internet as encoded data. These videos are decoded into a form that can be displayed. You may have heard of file formats such as MP4 or MOV. Large videos are large files and can be in multiple MBs. Today large internet bandwidth - the amount of data being set over the wire per second - in many parts of the world is commonplace and large enough that one can expect even large movies to download in some minutes. But this was not always the case, and is still not the case in many geographies and if one is using mobile internet. At one point 30% of the data being sent over the internet was that of videos on Netflix. Now with streaming becoming the norm, it became impertive that companies become smarter about how to streamline this data being sent. 
 
-### Upload Content
+Application like YouTube apply a sort of just-in-time download, where only windows of the video are downloaded at given time. Assume you are at the 15th minute of a movie, YouTube may make sure that everything only from the 15th minute to the 20th minute are downloaded and ready to be viewed. Choosing the size of the window is based on heuristics, that are based on multiple factors such as the available bandwidth and bitrate. Bitrate is the amount of video information available per frame of the video. If there is more information, the quality of the video is sharper and clearer and lesser the bitrate then the quality is more blurry. If one chooses too small a window then if the download rate is slower than the playback rate, the user will have to wait till the next window is downloaded. If this happens too often it can break the viewer's experience. If the window is too large then if the user only want to watch a part of the video or watches a part of the video before moving to another one, this can end up in a lot of wasted bandwidth for both the user and the provider. Therefore, there is a tradeoff that developers try to optimize.
 
-### Document and Data Manipulation
+The players themselves are pretty standardized now in functionality. The usual functionality are:
+  - Play, pause, forward, backward buttons to control the playback of the media.
+  - Settings to control the bitrate or quality of the video.
+  - A seek bar to show the progress of the media with a cursor moving along a bar representing the entire length of the media playing time, which users can move inorder to seek to a particular time in the media
+  - Ability to turn on or off subtitles if any.
+
+### Sending instant messages
+### Document Manipulation
+Application that allow you to write documents on a layout that represents, for example, an A4 size paper are specialized cases of text input fields. But in many ways they are much richer than just a text input field. These are 'what you see is what you get' - WYSIWYG editors. The only data for text editors are usually the text themselves. But the data driving WSIWYG editors are more expressive with the ability to save information such as which part of the text is bold or italics, what the font or colour of certains parts of the text are. 
+
+Like mentioned for data manipulation, document editors such as google docs perform continuous saves of the document. They also allow collaberative editing where the changes made by a user can be seen by another user on the same document.
+
+Another form of documents are spreadsheets. These are sheets of cells arranged in columns and rows. Users can enter data into cells. These have evolved over the years to be more complicated than just storing data in cells. Math operations can be performed between cells and more complicated instructions bordering on code can be written to manipulate the data in the cells.
 
 ### Manipulate Vectors and Images
 
 ### Display and Interact with Data Visualizations
-
-### Customer service chat
-
-### Maps
 
 ### Examples of applications that use these:
 banking
