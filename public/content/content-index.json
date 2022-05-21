@@ -457,5 +457,21 @@
                 "content_location": "startup-lifecycle/moat.md"
             }
         ]
+    },
+    {
+        "display_name": "Future",
+        "content_path": "",
+        "children": [
+            {
+                "display_name": "Metaverse",
+                "id": "metaverse",
+                "content_location": "future/metaverse.md"
+            },
+            {
+                "display_name": "Cryptocurrency",
+                "id": "cryptocurrency",
+                "content_location": "future/cryptocurrency.md"
+            }
+        ]
     }
 ]
