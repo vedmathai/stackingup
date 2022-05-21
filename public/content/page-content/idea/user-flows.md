@@ -123,7 +123,12 @@ But that being said, the value provided from maps is just immense. Food-ordering
  - Locating points on the map canvas.
  - Drawing lines between points on that canvas - for showing the path between two points.
 
-### Create and manipulate account details
+### Create and manipulate account details and settings
+An account is a representation of the user on the application. As a representation it may have data that identifies the user such as the user's name, address etc. Knowing this information may be legally required as for banking applications or may be required as an important step in one of the application's user flows: health applications will store body parameters so that one can compare against their own history of parameters or content applications such as Spotify stores your preferences and liked songs so that they can tune more information towards your tastes. 
+
+But account preferences or settings are a sort of meta user flow, because it can be used to capture settings that can effect the display or abilities of the application itself. These are very useful in improving accessibility of applications and also can allow users to streamline the application themselves to their liking. This puts less burden on the designers to get the layout and feature lists just right. They can now take an option of adding more features to the application if possible and letting the users choose which they want to see. Feature rich applications such as Photoshop do this by having toolkits that can be swapped out for and hidden, thus removing the clutter.
+
+When allowing such meta changes to be made to applications by users, care must be taken that the user is able to back track. If a user changes a setting which is unworkable for them, but the same setting also inadvertantly also disabled or hid the feature that allowed them to change this setting, the user is now in a state that they can't get out of. This can happen when the user is trying to change the language of the application, if by chance they select a language they don't actually understand, it can often be hard for them to again find the button or menu which allows them to change the language back.
 
 ## Abstract User flows
 The previous set of user flows were very specific. But given their specificity, they do not cover all possible flows in all apps. It is impossible to cover in such detail all flows in all apps since there is a long tail of them and each one will be different and domain specific, but what we can do is try to build a more general classification of user flows. This may be harder to follow, but having this classification at the back of your head will help you understand how to navigate your own apps user journeys once you identify which of these buckets they fall under.
@@ -181,23 +186,44 @@ The players themselves are pretty standardized now in functionality. The usual f
   - A seek bar to show the progress of the media with a cursor moving along a bar representing the entire length of the media playing time, which users can move inorder to seek to a particular time in the media
   - Ability to turn on or off subtitles if any.
 
-### Sending instant messages
+### Emails and Instant Messages
+Instant messaging works differently from emails in that the protocol allows for notifications to arrive to your phone as soon as a message has been sent that is addressed to you. To get an email on your computer so that you can read it, your device has to keep periodically checking with a remote mailbox as to whether there are any new emails for you. Most of use use instant mesaging and have now become standard features in all of our workplaces and lives with messaging applications such as Whatsapp.
+
+Emails and instant messaging applications can be thought of data upload and data download, and that is true, it can. But the standout element of these user flows are the notification. When a message arrives a user has to be notified so that they can open the inbox or look at the chat. How and when that notification should be fired is an important point for designers to consider. Another point to consider is whether those decisions can be left to the user to configure.
+
 ### Document Manipulation
-Application that allow you to write documents on a layout that represents, for example, an A4 size paper are specialized cases of text input fields. But in many ways they are much richer than just a text input field. These are 'what you see is what you get' - WYSIWYG editors. The only data for text editors are usually the text themselves. But the data driving WSIWYG editors are more expressive with the ability to save information such as which part of the text is bold or italics, what the font or colour of certains parts of the text are. 
+Application that allow you to write documents on a layout that represents, for example, an A4 size paper are specialized cases of text input fields. But in many ways they are much richer than just a text input field. These are 'what you see is what you get' - WYSIWYG - editors. These type of editors allow you to intuitive type into the document layout and use the mouse to drag and drop images etc. And as in the name, whatever you see while you are editing is and will be the final layout of the document. For many of us, it will be difficult to remember a time before, but earlier people used to use text fields with special marks or - marking up - on the document to mark out the special properties of parts of the text or the document. Later another program will convert that to final layout. Decendents of such document creation tools - for example, Latex - are still used by the scientific community to write papers. There the benefit is once you provide the marked up text, the documents are created in a standard format for all authors submitting to a conference or journal.
+
+The only data for text editors are usually the text themselves. But the data driving WSIWYG editors are more expressive with the ability to save information such as which part of the text is bold or italics, what the font or colour of certains parts of the text are. 
 
 Like mentioned for data manipulation, document editors such as google docs perform continuous saves of the document. They also allow collaberative editing where the changes made by a user can be seen by another user on the same document.
 
 Another form of documents are spreadsheets. These are sheets of cells arranged in columns and rows. Users can enter data into cells. These have evolved over the years to be more complicated than just storing data in cells. Math operations can be performed between cells and more complicated instructions bordering on code can be written to manipulate the data in the cells.
 
-### Manipulate Vectors and Images
+### Manipulate Vectors, Images and 3D shapes
+Image manipulation, like mentioned for maps above, is performed on a canvas, which is a tool that allows more control over individual pixels. The range of functions that are available for image manipulation range for simple to powerful that need trained skills to use correctly. The simpler functions are:
+ - Crop: removing sections of the image.
+ - Resize: making the image smaller or larger, by sampling pixels when making an image smaller or by imputing values when making an image larger.
+ - Rotate: Move all the pixel around an axis.
+
+Other image manipulation applications have range of tools, too many to repeat here but just to name a few:
+ - Layering: These can be seen as different images all stacked on top of each other, allowing for better movement.
+ - Shapes: Create predifined shapes by adding coloured pixels to the canvas.
+ - Brush: Add coloured pixels to the screen as the curser moves on the canvas.
+ - Blur: Use mathematical equations to mix the colour value of neighbouring pixels.
+ 
+As the reader can see these class of tools assume that the image is a bitmap, where every pixel's value is individual stored and can be individually manipulated. This can be very useful for certain types of uses such as manipulating pixels of a photograph, but firstly, for large images the on-disk size of the image can be very large and secondly it does not lend itself well to resizing.
+
+Another class of image manipulation tools are those that deal with vectors. If bitmaps remember the value of each pixel individually, vectors remember only certain parameters about the lines used, which then at the time of rendering can be used to impute values of pixels between them. The upside is that these lend themselves well to resize up or down - the drawings created will be sharp. But it can be difficult to manipulate images or create realistic looking images from them, though really skilled artists can do so. The more common use of these can be to create vector drawling such as small illustrations or fonts in font-systems.
+
+Taking this one step ahead is the application of drawing three-dimensional - 3D - diagrams. 3D diagrams means drawings of objects that have not only height and width by also a depth. Displaying 3D diagrams on a 2D screen involves removing an entire dimension which should technically mean information is being removed. However, clever maths are able to project this 3D shapes onto the 2D screen in a way that the mind's perception is able to reimagine the three-dimensional nature of the object.
 
 ### Display and Interact with Data Visualizations
+Pure data, especially that of numbers can be very hard to parse for humans. Imagine columns of numbers with multiple digits for precision. Borrowing from the same example of maps already spoken about above to illustrate the point, we assume a dataset of cities of the world and the latitude and longitude for their agreed upon city centers. Placing them in table such as this --add table here--, it is impossible to draw inferences about how far these points are from each other or in which direction. However, rendering them on 2D map allows us to understand these questions at just a glance.
 
-### Examples of applications that use these:
-banking
-console
-ecommerce
+Data visualization aim to this with just about any data. How do you tell the story the pure datapoints are trying to tell, by just representing them differently.
 
-## Talk about users lifes. Persona
+The user flow regarding data visualization can involve just representing data in static fashion, or can also involve interactability with mouse clicks, button and even gestures. Creating good visualizations is a hard design task, and we have dedicated an entire chapter to this.
 
-## Minimum Viable Product - coherence over feature rich.
+### Voice Calls
+Voice and video calls over the internet are similar to video streaming but this now includes a two-way stream, upload and download. Calls unlike streaming movies or other content have to happen in near real-time. But the internet wan't designed for real-time delivery of data. This means there can be issues of call drops and a little more complicated issue of data packet drops. This means certain parts of the call may not arrive and may require to be requested for again. But this adds to the delay and whatever information is now sent may be stale and not useful. But if the response come back in time, it may still be useful. The question to understand for designers is, how stale is stale, and when is it better to have let the packet drop anyway.  
