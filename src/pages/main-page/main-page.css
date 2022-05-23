@@ -106,7 +106,7 @@
 @media only screen and (max-width: 600px) {
   .content-container {
     margin-left: 5vw;
-    margin-top: 50px;
+    margin-top: 100px;
   }
 
   .content {
@@ -114,7 +114,12 @@
   }
 
   .content h1 {
-    font-size: 30px;
+    font-size: 32px;
+  }
+
+  .content h2 {
+    font-size: 28px;
+    text-decoration-thickness: 10px;
   }
 
   .content p {
