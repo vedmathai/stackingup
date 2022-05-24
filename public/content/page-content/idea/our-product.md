@@ -122,6 +122,43 @@ But then it becomes hard to make quick comparisons to answer questions such as d
 
 What if they had and interactive display of this information that at clicks of buttons change what information it is depicting and allows the user to play with the data so that they may draw inferences about where exactly they can improve for the next week.
 ## Monetizing
-who will use and pay
+If one of aims of creating the application for the developers are to make a profit then an important part of designing user flows is understanding how much money would a user would pay to use a particular flow in the application. If you are at the stage where you are just starting off and are yet to create the app, and you are looking for external sources of funding, say from venture capitlists then there has to be at least a meaningful path to profitability that can be explained in theory. The theory may fail later, but having a theory is better than no theory.
+
+There are many apps which are very useful, but the path to profitability is not clear, if it exists. For example, utility applications such as calculators will find it hard to ask people to pay for what they percieve is a utility available on their phone. However, there have been cases, such as [evernote][https://evernote.com/] that were able to earn a revenue by selling value added services on what at first glance seems to be a utility - note taking. 
+
+Knowing how to price your product is another voodoo art, especially if there is competition. With Gmail giving email and email accounts free, others may find it hard to ask customer to pay for what is otherwise free email. But even Gmail has put a price on certain features of email, for example if you need an email ID for a custom domain or if you need more space in your inbox.
+
+The usual way of pricing is to look at competition, and find one that has mostly the similar product and price either above or below them. If you are pricing below, you are trying to undercut their business and say something of the sort, 'Here is a similar or slightly better product for lesser.' And people may want to try your product out if give the same quality for lesser. If you are successful at undercutting, it may force your competition to also lower their fee to match yours. Then your USP - user selling point - now suddenly goes away. If you, however, price your product slightly above their price point, you will have to do it for a clear reason why.
+
+On the white board we have to now ask what the path to possible monetization in our app is going to be. Our competition seems to have taken the path of being freemiums. This means that part of the application is given out for free, while certain other features are placed behind a paywall. Without getting into how much we should actually charge, we will discuss the mechanism for charging. In our app, we will also then follow a freemium model and give certain parts of the app away for free and allow access to certain features only for paying customers. Since we already have a system for users to have accounts on the app, it becomes easy for us to track who are the premium paying customers and who are on the free tier.
+
+For the sake of illuminating different tiers, we will price the following features at different tiers:
+ - Free Tier: Ingredients to Recipe lookup.
+ - Paid Tier 1: App will keep a record of the users ingredients.
+ - Paid Tier 2: App will suggest the ingredients for the week based on past usage.
 
 ## Minimum Viable Product
+We have walked the full range of analysis of user journeys for the application, from an early idea to what full-blown implementation should look like. Now comes a important point in many startups, what is the minimum set of features that fully explains your idea in a working condition even if it is rough at the edges. This is an important decision to make because of the following.
+
+### Limited resources to build
+Early startups have limited resources. Sometimes it may happen that the amount of effort required may be right up your alley and you and your team may just be able to complete the whole plan at one go, but sometimes the size of the ambition can outsize the size of the team. In such cases you need to plan well.
+
+### Validate customer needs
+The only proof of how much value is a product is by showing the value. We can theorize about the value of the application, but the next logical step after theorizing is actually prototyping and testing the application in its project environment with its projected customers. This means creating a cycle of build, putting it in the customer's hands, and reiterating. This will help debunk certain early theories, if any, allow us to correct our courses, and decide with actually data at the decision points.
+
+At some point your product will actually be usable and customers would be ready to pay for it. You may feel getting customers to pay for your product is not necessarily as important as completing the entire vision. But having that few extra dollars is not going to hurt.
+
+### Validate technology assumptions
+ - Sometimes we make assumptions about the technology that may not prove right later. This especially is true of deep tech, or cutting-edge technology. For example, an area of interest could be using AI to create recipes from scratch, just the way AI is able to create text or images. This may seem very interesting, even if just for to flex your AI building muscles. But the way research is now, it is not clear right now if such an algorithm will work and actually provide as output recipes that make sense. It is not as straightfoward as setting up a database or application. There any skilled person can guarantee completed work in a certain amount of time. But there are simply too many factors in building such a system that however skilled, even the best AI practisioners can predict whether such a system will work perfectly. If we were trying to crack such a cutting-edge problem, it may make sense to first work out a simpler solution to the problem, before moving on to solving it properly. Getting the solution working for few cases or for even very conceited cases can shine a lot of light in what you are trying to do.
+
+ ### Satisfy investors and other stakeholders
+ A lot may be riding on the success or failure of your application. Investors may have given you some money or support and now want to make sure you are on the right track. In the beginning you may be able to provide abstract explanations for your idea, but after a point investors expect to see them in the flesh. You may be able to understand that your puzzle may be done just about enough, that if you slot in a few pieces it will be complete, but external people will not be able to understand this all of the time, they can only comment or judge on what they can see. They may not have the know-how to look at code. When the time comes to show a demo, you may be in a position where the code works for a lot of edge cases but requires a lot of command line work input-output, or it works on a few cases but it works end to end through a UI. In such cases, it is always better to make sure however you interact with your product you are doing through a UI because rememeber most investors come from different walks of life and most of their interaction with a computer would have been through a UI, and if you show them the internal workings in lieu of a demo they may not get the whole idea, and feel you haven't made any progress.
+ 
+ This is analogous to going to car factory to see progress on a car. You many not understand if they show you a sheet of metal. A car manufacturer know that it is only a matter of a day before that sheet of metal is moulded and fitted into a working car, but you as a lay man would feel that this sheet of metal to a full car is going be a while.
+
+## Our minimum viable product
+We, in our product, don't strictly need a minimum viable product, because we will discuss what could have been good minimum viable products for us.
+ - A good MVP for us would be only the search of recipes given products, similar to what was described in the inspiration section above.
+ - We could layer on the ability for users to create and maintain accounts.
+ 
+The ingredients tracker and the shopping list creater and the creation of data analysis reports seems like goals that could wait. But what do you think as the reader, would you do it this way? Or do you know friends that you could work with that could complete all of the goals in one shot? Think about what would be a good MVP, and who in your circles would be impressed by what feature.
