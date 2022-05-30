@@ -51,8 +51,57 @@ This software is called the operating system. In the 80's there were operating s
  - Linux: The kernel of this operating system is open-source. That means it is developed and maintained by the community. Precisly because of this, people are allowed to make a copy of the operating system source and add their own features which they think is important. And there have been many flavours of Linux that have been created and released. Of them all one of the most used is one called Ubuntu, there are others called Red Hat that are used for enterprise grade software. But Ubuntu is powerful enough and will be the one we are using later. There are many comparitive websites that list the pros and cons of choosing one flavour of linux over the other. Ubuntu also has a powerful desktop that supports it, however, it is not as well supported for famous desktop applications, like MacOS and Windows are. However, because Linux and its flavours are free and powerful it is the most used operating system for cloud computing. This also means that many of the important software, such as databases or programming languages have first-class support for these operating systems. Since linux is based on Unix just like MacOS, they are cousins in many ways and the developer software that works on linux also works well on MacOS. But is not a given. However, since MacOS is closer to Linux than Windows is, more software and the commands work on MacOS than Windows.
 
 ## How applications work
-### Programming
-compiling
+### Programming Languages
+Applications are programmed as instructions that are to be run on an operating system. Technically, everything from the application to the operating system to the base layer that is instructing the actual CPU is all code. The code that runs the CPU - assembly language - is a low level language that when run instructs movement of bits on actual hardware, such as telling the CPU which memory cell to actually read from or write to.
+
+Over years developers were able to build languages that abstracted out some of the lower level work while using higher level phrases. The analogy can be found in kitchen appliances. Assume you were trying to make toast sandwhich without a toaster or a stove. You would have to light a fire with some fuel such as coal or wood pieces, heat the bread on that lit coals, turning it over to toast both sides and create the sandwich. Lighting coals is not the easiet job. Later with a gas stove, achieving a fire with with you can cook came down to seconds. But the process is still the same, you still had to heat the bread, turning it from side to side and then assemble the sandwich. With an electric toaster, the fire and the turning from side to side has been abstracted away to just placing the bread in the toaster and pressing the button. But the sandwich still has to be assembled.
+
+Assembly language is the language that is most tied to the hardware. Each type of hardware will have its own language. To make it conducive to programmers, such that they don't need to write the same code for different hardware, programmers are able to write the code once. Then they use compilers to convert the instructions to forms that the different types of machines are able to understand. A famous example of this type of language was C.
+
+There have been many different types of programming languages that have been introduced over the last 70 years. Each have slightly different features or purposes. And many of them have taken off and been part of larger paradigm shifts. C was one of these languages that were part of the paradigm shift of having to code in one language but being able to be compiled and run on multiple systems.
+
+The paradigm for which Java was the flag-bearer was that of Object-Oriented Programming. Programs that used this paradigm went one layer of abstraction above the code and created elements called objects at run-time. This created new relationships between elements in the code that could be harnessed when programming, in order to make the code more readable, more reasuable, and have stronger safety for prgrammers so that they don't inadverantly step on other pieces of code that were meant for other functions.
+
+Today one of the predominant programming languages is Python. It is a very high level language, and while Java and other languages have types - where variables are given a type of say integer or string - Python can be programmed more loosely. This allows for faster prototyping that suits data science tasks, that require lot more programs to written faster for more reiteration. But the lack of defined types, opens up the code to bugs and be harder to maintain over time. Because of this and other reasons, python is also around 10 times slower to computer than the same code written in C. For high volume or very low latency applications this may not be acceptible, but trading this off for faster development and iteration time apparently makes sense for many users.
+
+### Scripts and servers
+Running a piece of code can be as simple as running a command in the terminal or command line that invokes the compiler and the run command that is particular to the given language. The terminal is a text based application that allows users to control a computer. The text-based application can invoke other applications, and is similar to a GUI that is can be used to click on and start an application using an icon.
+
+A text-based terminal is more verbose and more power when creating, running and testing applications. The control and verbosity is important to create a tight loop to weed out errors in the code and to make it better.
+
+There isn't a hard and fast nomenclature, but just to create a demarcation, a script type program is one that is run start to finish possibly with some inputs and some definite outputs. A server type application is a program is run and is continuously on - it listens for interrupts from external sources to perform an action. An example is a server that servers a website. When a user requests a website, the request reaches a particular port - a logical end point, desribed in detail below - the server program is also runnning and is on a loop that listens on that port. That means it is continuously reading that port and if any request data arrives there it starts a processing loop. This processing loop follows and performs some logical instructions and replies with a result if necessary.
+
+Another form of a program is one that is UI based. Just like the server, it runs in a loop in a device with a display. The loop continuously listens for a user input such as a mouse click or even a mouse hovering onto the element. When this event is triggered, some series of steps are performed, While that process occurs, the UI is still listening.
+
+### Algorithms
+Algorithms are the set of instructions or logic that process information, data or actions that create new forms of that information or data and take a new action. Algorithms are best expressed as examples:
+ - Sort: The process that accepts a list of information that contains elements that can be naturally ordered. This process orders this information in this list. 
+ - String match: Given a larger text, and a search term, this process looks for and returns where the search term occurs in the text if anywhere.
+
+ There are too many algorithms to list all of them here. And there are many resources that cover them in detail. But a large section of the power of using computers come from clever algorithms that are able to do certain processes faster and better than humans can. For many companies the algorithms are their propreity formula that keeps changing, but is what drives their business. Examples include:
+  - Google's Search: There were many algorithms for search before, but some cleverer and more effective ways of performing the search over webpages, made Google the preeminent web search algorithm.
+  - Netflix's Recommendation Engine: We have talked about recommendation engines earlier. This is engine allows Netflix to not only know what content to display, but nowadays even drives their choices over what content to produce as a company.
+
+Algorithms have a sense of measure. They have a large effect on how long the process can take, because there are many ways of getting to an end result. For example, to sort words in alphabetical order, you can follow this process: choose the first word and keep it in your hand, loop through all the other words and if you see any one is alphabetically lower than the one you have at hand, exchange it for that word. Keep going till you get to the end of the list. If you have, take the word at hand and move it to another list. Keep doing this till you move all words from one list to another. How long will this process take? Every move is a process for the CPU we spoke about above. Even if you say that the time spent to perform one move is a microsecond, that is 1 millionth part of a second, if you have 1 million items to go through, this will take a second to move one item to the other list. And now do this for the entire list. It is going to take 1 million seconds. That is going to be quite a bit of days.
+
+However, if we change the algorithm where we split the list into two, and then try to order only the words within them. We will then get two ordered lists. To now order all the elements in these two lists into one giant list becomes easy. Just look at the first word in the list and compare, if the first word in list 1 is alphabetically lower than the first word in list 2 then you know that that word is alphabetically lower than all other words since list 1 is ordered and all other words have to be alpabetically greater than that word. Similarly for list 2, if that word is alphabetically lower than the first word in that list, it is going to alphabetically lower for all the other words in that list, so you can easily just add that word to the new list.
+However, to get these two ordered lists in the first place, you still have to go through all the words half a million times each. 
+
+But lets calculate how many steps it would take for each list, for every word in the list we have to look at every other word in the list. So that means 
+```
+500,000 x 500,000 = 250,000,000,000 or 2.5*10e11
+```
+and this we do twice so we get 5 * 10e11 moves.
+
+But if we had done this in the original list, we get 1 million x 1 million moves, which is 10e12 moves. Therefore we have cut the number of steps by half.
+
+Now imagine if we do the same thing, but continue to keep splitting the two lists till you end up with many lists of just two elements each. And then slowly use the same process to assemble the fully ordered list. This brings down the cost of performing the procedure from some order of n x n to an order of n x log(n). In terms of the earlier numbers this brings down something that was 10e12 moves to something that is now 10^6 x log(10^6), which is 6 million moves. And when we said something that took days earlier, is suddenly brought down to seconds. 
+
+Algorithms to do useful things like this faster and better are still being discovered and the concept of what is useful is also being stretched as more algorithms are being discovered. A good algorithm is a good source of value that we talked about in the page on [value](/value).
+
+### Putting it together
+To put it together an application is written in a programming language that is run on some computer or is running on some computer and can be accessed through some end points. To create useful work, the application may use an algorithm that performs some logic on some inputs, be it data or actions and performs some output which again can take the form of data or actions.
+
 ## How the Internet works
 ### Protocols
 The internet is a net of computers, hence the net in the name. These computers talk to each other over the network. To talk to each other they need some common rules that they follow that dictate how they send information to each other. There are many different pis a very powerful OS that works in a very integrated manner with the hardware protocols available, but the protocols that the internet are built on are TCP - transmission control protocol - and IP - Internet Protocol. In reality there are many layers of protocols that wrap and rewraps and unraps data between a source and destination. Unless your business is specifically in setting up these protocols and networks, you may not have to worry too much about these. If you are building a computer you had to worry about attaching a network card to your mother board. But nowadays, mother boards come integrated with the network card.
@@ -100,10 +149,14 @@ Database Management Systems (DBMS) are software that help manage these databases
  - Update: This the ability to edit or change certain attributes of a row in the database. For example, changing the designation of a co-worker.
  - Delete: This is the ability to remove a row, in the same example, it would removing an entry for a co-worker in the table.
 
-To perform these actions DBMS users use a form of code that is declarative. This means the code declares what data is required from the database or to be added to the database rather than informing the database of the procedure to follow. These are called 'query languages' and there are different form of query languages for different forms of databases, but Structured Query Language - SQL - pronounced as 'sequel,' has become one of the standard querying languages for relational databases. An example of 
+To perform these actions DBMS users use a form of code that is declarative. This means the code declares what data is required from the database or to be added to the database rather than informing the database of the procedure to follow. These are called 'query languages' and there are different form of query languages for different forms of databases, but Structured Query Language - SQL - pronounced as 'sequel,' has become one of the standard querying languages for relational databases. An example of a query is
+
+```sql
+SELECT * FROM EMPLOYEES WHERE EMP.ID = '222';
+```
+This query says select all the columns and display the data in them for the data row where the  in the table labeled employes 
 
 DBMS systems are software that can be run locally, and indeed many  
-
 
 ## Running code on your local system
 
@@ -119,7 +172,7 @@ DBMS systems are software that can be run locally, and indeed many
 
 ## Docker
 ## Services
-### APIs
+### External APIs
 
 
 ## Build versus buy
