@@ -102,6 +102,11 @@ Algorithms to do useful things like this faster and better are still being disco
 ### Putting it together
 To put it together an application is written in a programming language that is run on some computer or is running on some computer and can be accessed through some end points. To create useful work, the application may use an algorithm that performs some logic on some inputs, be it data or actions and performs some output which again can take the form of data or actions.
 
+### Frameworks
+As we said earlier, programming languages have been grown with layers of abstraction over each other, where larger pieces of actions are delegated to smaller command set. Similarly, frameworks aim to get more work done by wrapping repeated and useful actions into a package that can be imported and used. Frameworks are usually written in a particular programming language and are compiled in using a compiler in that language. This means, one can choose to use commands from the package or use the vanilla version of the language to perform the same task. They can even intersperse the commands from the framework with that of the language in the same code.
+
+An example of a framework is React. React is a framework written in Javascript. One of the uses of Javascript is in creating webapps that run on web browsers. The apps on web browsers are meant to be interactible and seldomly run instruction after instruction, but rather run in a loop always waiting for an interrupt to arrive from the user or from the backend. This is a hard task in pure Javascript and can lead to very verbose code, since if some data element changes every element that depended on that data as to be refered to and re-rendered or refreshed. React and similar frameworks to React, such as Vue or Angular, aim to take this burden off the developer and allow the developer to write more streamlined code such that they can achieve more with less.
+
 ## How the Internet works
 ### Protocols
 The internet is a net of computers, hence the net in the name. These computers talk to each other over the network. To talk to each other they need some common rules that they follow that dictate how they send information to each other. There are many different pis a very powerful OS that works in a very integrated manner with the hardware protocols available, but the protocols that the internet are built on are TCP - transmission control protocol - and IP - Internet Protocol. In reality there are many layers of protocols that wrap and rewraps and unraps data between a source and destination. Unless your business is specifically in setting up these protocols and networks, you may not have to worry too much about these. If you are building a computer you had to worry about attaching a network card to your mother board. But nowadays, mother boards come integrated with the network card.
@@ -154,25 +159,60 @@ To perform these actions DBMS users use a form of code that is declarative. This
 ```sql
 SELECT * FROM EMPLOYEES WHERE EMP.ID = '222';
 ```
-This query says select all the columns and display the data in them for the data row where the  in the table labeled employes 
+This query says select all the columns and display the data in them for the data row where the in the table labeled employes 
 
-DBMS systems are software that can be run locally, and indeed many  
+DBMS systems are software that can be run locally, or on a server and exposed through an API. Indeed earlier developers would have an instance of a database running on a server they own or are renting from a service provider on the cloud. But imagine if you are bank and are keeping a record of all the amount of money in each of your account holder's accounts and suddenly something happened to the server that had this data. You would lose tab of who had how much money and that would cause sheer pandemonium.
 
-## Running code on your local system
+To stop this sort of scenario, you as the bank app developer will have to make a copy of the data and save it elsewhere so in case something does happen to the database, the data will still be available. This creates extra overhead for whoever is maintaining the database. They will have to periodically take backups and move them somewhere. 
 
-## Tutorial to access an actual droplet
+Another scenario is what if the data becomes to big for the machine that it is on, developers will have to hire a larger a machine and move all the data there, again creating more work for themselves.
 
-## Languages, frameworks and other technology
-### Python
-### Flask
-### Javascript
-### React
-### MySQL
-### JSON
+Many cloud service providers such as AWS, DigitalOcean or Google Cloud now provide managed database management systems as a service. You can turn on a database on their systems and access it like you would access a DBMS that you have set up on your own. The difference is that for a little more cost, they take care of making copies of your data and also allow you to scale the size of the data stored there seamlessly without the need for migrating the data.
 
-## Docker
-## Services
-### External APIs
+## Containers
+We spoke of how developers would run and expose end points to their code through ports that user could talk to and get some useful work done. This code would be deployed on computers that were available through a static IP address and registered on a DNS. To deploy the code on a server a developer would have to manually copy the code from their laptop, or the computer they are actively working on to the computer that they are using to serve this code.
 
+There can be many instructions to follow and over time the instructions required to deploy can grow. Keeping tab of these various instructions can be hard and it is only human for the developer to forget steps or make mistakes when applying them, making deployment an unnecessary burden to the team. Computers are all about automation and anywhere there are repeatable instructions that can be executed with 100% certainity is a right up the alley of automation.
+
+But different systems may have different sets of instructions to run depending on the setup. To make sure of the certainity and repeatability of the process, we use a set of instructions that ensure, no matter on what system you are running your code, it will work the same. 
+
+This is where containers come in. The name is inspired by the system used in the shipping industry where to send goods across the ocean on ships, the industry uses standard metal boxes that are the size of a room. The customers who need to ship items load the items into the container from their warehouse or factory. The container then can move by truck, train or ship. It makes loading, moving and storing items much faster.
+
+Containers in our context are a set of instructions that involve among other possible commands these basic commands:
+ - Load the OS on which the application code has to run.
+ - Download and install the packages that the application code requires.
+ - Expose certain ports on which the application code needs to accessed.
+ - Provide the command that turns on the application code.
+
+We shall look into containers with more details [here](/docker).
+
+### Data Processing APIs
+Earlier, to process data or information, developers could either implement their own algorithms or buy or use other's implementation. But often these algorithms can be a small part of the larger solution or business, and also developing these algorithms are sometimes huge investments, that companies may find it better just to use services that have implemented these algorithms and processes.
+
+We have already seen examples of this when we described APIs vs UIs in the page on the [different types of startups](/types-of-startups). Types of services that these providers, such as Amazon, Google or a variety of smaller companies, are to be accessed through APIs. These services provide the chance for companies to innovate using these lower level offering by using them in different ways to add value and offer them as a new APIs or as product that can be accessed through the UI.
+
+Examples of these include:
+ - Maps: APIs that locate points given addresses, or the distance or route between two addresses.
+ - Language: APIs that translate text from one language to another, convert speech audio to text or text to speech audio.
+ - Machine learning: APIs that learn models from data and are able to infer a new result given new data.
 
 ## Build versus buy
+The availability of these services means it has never been easier to build complex systems very quickly. But it is not all rosy. As a business there are trade-offs to consider that may make compelling reasons to go ahead an build these services yourself even if they are available. This is known as the build versus buy trade-off.
+
+The reasons are:
+
+ - Dependence on the business of others: As a business it may be risky to tie your business at the hip to the business of other companies. If a key portion of your offering depends on a process or service that is available from a service provider and if there are no competitors or back up options for you, and if that service provider for some reason has to pull back or stop support for that service, it can bring your service too to a grinding halt. 
+ - Pricing: When a company offers a service, the price isn't just the cost of building and running the algorithm, it also includes company overheads such as the company's profit and markerting budget. Building a service yourself guarantees that you only have to pay the cost of development, maintaining and running the service. Most of these services bill per request cost. This can grow very big at very large request volumes. Instead if one pays the upfront cost of development then the amortized value, that means the fraction of the fixed development cost per request can become very low. This can be net beneficial. But only at high enough request volumes.
+ - Quality and Control: Depending on services means often times one cannot control the output of the algorithm unless the service providers expose knobs and levers to control certain aspects of the algorithm. For example, some algorithms can do a more thorough analysis of datasets, but may take more time to perform them, alternatively, they can also do a quick and dirty analysis and 
+
+Therefore, what most companies do is prove the value of the idea by implementing it using these services. If they are fortunate enough to prove the value they then perform an analysis to see what technologies, algorithms or models to implement inhouse and whether it makes financial or strategical sense for them.
+
+## What we will be using
+From the list above, we will be using:
+ - **Python** as the programming language for the backend and server.
+ - **MySQL** as the DBMS. 
+ - **Flask** as the framework written in Python for implementing a server and APIs.  
+ - **Javascript** as the programming language for the browser-based front GUI.
+ - **React** as the framework based on Javascript that helps programming the GUI easier. 
+ - **Docker** to implement the containers.
+ - **DigitalOcean** as the cloud service provider.
