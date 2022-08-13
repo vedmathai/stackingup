@@ -48,6 +48,11 @@
                 "display_name": "User Flows and Architectures",
                 "id": "user-flows-and-architectures",
                 "content_location": "building-blocks/user-flows-and-architectures.md"
+            },
+            {
+                "display_name": "Our Architectures",
+                "id": "our-architecture",
+                "content_location": "building-blocks/our-architecture.md"
             }
         ]
     },
