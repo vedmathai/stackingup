@@ -1,3 +1,13 @@
-How architecture level blocks can be decided based on entire userflow. 
+# Userflows and Architectures
 
-For example architecture just for search.
+## Search
+Front end, backend, algorithm, upload
+
+## Form Upload
+
+## Data Load
+
+## Media Streaming
+
+## Data Processing
+
