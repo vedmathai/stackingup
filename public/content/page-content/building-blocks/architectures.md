@@ -35,27 +35,92 @@ A model-view-controller is a paradigm that helps split up these concerns. The pr
 The browser or operating system is perpetually in a loop that looks to see if any interaction from the user has been registered, see if any response has been received from the server or elsewhere for a request sent earlier and performs and actions on any data. The perception of near instantaneous response time of the UI is acheived by a meta-loop that executes a line of code or instruction for each of these activities before moving to another line from another of these activities.
 
 ## Servers
+
+We already discussed what a server is here, but to recap, it is a computer or set of computers running over the internet which is ear-marked to run only a particular function or set of functions repeatedly. The front-end of the application will communicate with this server periodically in order during the course of its running. To fully understand what the use of implementing a server is, it makes sense to ask why do we need one in the first place.
+
+### Why have a server?
 The front-end code is something that runs local to the device that you are using to interact with the application. What does this mean? The device that you would use to interact with an application is a full-blown computer, regardless of whether it is a mobile phone, a desktop or an integrated system such as screen that you use to control your car media. It has a CPU, memory and motherboard. The application is running on these resources, or in other words the processing, the storage of data and the manipulation of the screen are done on the physical device in front of you.
 
 In some cases all of the processing needed for your entire application or even some flows of it to be useful can be performed on the local device CPU. Examples of this are the calculator application or phonebook application that stores phone numbers on the local memory of your device. But in many if not most other applications there is a need for the application have some portion of its processing on some other more central machine through the internet.
 
-There can be few reasons for this:
- 1. Data: 
- 2. Heavy processing: Nowadays the phones or other handheld devices have enough processing power to do all but a few tasks. In some cases, systems may be designed where heavy actions are performed locally, but this can introduce a high amount of variability for the developer. Some systems may not be powerful enough to perform the task, they may be too slow or just not perform the task. Users prefer 
- 3. Propreitory algorithms:
-### Why run anything on the cloud?
+The reasons for these can be any one or even a mixture of the following:
+**Common Data:** Many applications are built as a ways to share data among different users. For example, social media applications allow users to post information which then can be read by other users. Ride hailing applications involve riders uploading their need for a ride to a central location - the server - and drivers being informed of these ride requests.
+Technically, if two users know each other's public IP addresses the applications on their devices can communicate with each other without the need for a server. For example, if the rider knows the IP address of the driver's device the rider can directly send a message to the driver's device with their request and location and the driver can respond directly to them. This somewhat resembles what a rider would do if they knew the drivers phone number and called them. However, the conceit of ride-hailing applications is that they help match rider's request with a willing driver among the many drivers signed on on the application and currently in the area. This can still work if the user knows all of drivers IP addresses and broadcasts the request to all of them. But any given point there can be any number of drivers ldrivers that have left the application or new drivers who have signed on, the user's device would need to consistently have their list refreshed. Also, to save time and not have a spammy solution where in the worst case all drivers in an area get all requests from within that area, an algorithm works to choose the best driver according certain factors such as their location or distance from the rider. If we didn't user a server, a user's phone would have to constantly be updated with information about these factors from all drivers, and this will create a lot of load on the network in terms of number of requests being sent around. Therefore, a much simpler way to have one single point to which the riders would notify their request and from which drivers would be able to read after a round of filtering and matching.
+
+**Heavy processing or data:** Nowadays the phones or other handheld devices have enough processing power and memory to do all but a few tasks. Systems may be designed where heavy actions such as processing a machine learning task or converting video files are performed locally, but this can introduce a high amount of variability for the developer. Some systems may not be powerful enough to perform the task, which may result in the application performing too slowly or even failing to complete. It may also happen that the required data may take too long to download given the user's network environment, or the user may not have enough free space on their devices.
+
+To make their own lives easier developers can choose to move most of the necessary heavy processing on to the server where they can deploy very powerful systems that can perform the same task consistently and quickly. Just like for data there is an interesting tradeoff here for a developer to analyse: running code on a server can be costly since one would have to invest in the physical machines or rent them from a provider while moving some of the processing onto the users' devices can warrant the developer deploying lower power and, hence, cheaper machines. The tradeoff is between standardizing experience for the user and overall cost for the developer.
+
+**Proprietary algorithms or data:** Depending on the business model of a company, the way they get paid for their services can range from per-use to a license model which lasts for a given set of months or years or it may have a pay once and use forever license. Even if the algorithms and data are codified and sent and run on your device in ways that a layman wouldn't understand, a really interested party can reverse engineer this code or find hacks where they can use most of the code while circumventing the part of the code that checks if they have an active license or not. To prevent even the possibility companies will choose to run the algorithm on their machines and provide hooks for front-ends so that the front-end can access the algorithms at various points. These hooks can be in the form of APIs.
+
+### Load Balancing
+### Microservices
+### Serverless
+### Databases
+We covered databases in detail in the section on [infrastructure](/infrastructure), but we again mention them here to connect back to this dicussion of architecture. Even though many actions on the front-end may seem like a simple database write or read, front-end code seldom issue requests directly to a database. The requests are always sent to server API whose address has some semantic meaning as discussed below. The server then writes this information to the database. This is to maintain consistency and security. Most data that arrives from the front-end will not have the same format as the data in the database. The data may need to processed, augmented or filterd before writing in to the database, this work is best done by the back-end code. Also by not directly exposing the database layer to the public adds one more layer of deterence and security to protect from potential malicious actors.
+
+## Communication
+When implementing an application that has a front-end and a back-end it is important to think about how these two parts are going to communicate. The important aspect of communication is to design an understanding between the front-end and the back-end about the types of messages being sent between them and how to read them.
+
+For example, in the ride-sharing application when the user requests a ride the front-end should inform the back-end about the user's name or identifying ID, the user's current location and destination and possibly the type of ride. The format will be something like this:
+
+```json
+{
+    "user_id": "rider123",
+    "user_name": "John Smith",
+    "current_location": "12.9757° N, 77.6058° E",
+    "destination_location": "12.9716° N, 77.5959° E",
+    "service_type": "premium"
+}
+```
+While a simplified version of the response could be:
+
+```json
+{
+    "driver_id": "driver123",
+    "driver_name": "Andrew Neilson",
+    "fare": "$10",
+}
+```
+
+We can have multiple more of these request and response pairs:
+1. Rider and driver location tracker
+2. Cancel ride request and response
+3. List past rides request and response
+4. Make payment request and response
+
+So how does the server know how to parse this information. One way of letting the server know this is by adding some information inside the message that the server will read and understand what to do with the rest of the message, the other is to have different addresses to which the front-end will send different information. The difference is like having a separate postboxes at home for letters that come from your office and different letters that come from your bank or other utilities versus having just one postbox to which all letters are delivered and then you sorting them into different piles later.
+
+The best practise to follow is to divide all of these possible requests by functionality and have different addresses for them. This is what the REST (REpresentational State Transfer) principles allude to.
+
+The REST protocol tries to define all communication between the front-end and back-end in terms of resources or objects. For example, the ride request key-value pairs shown above would be one such resource and the address would of the form: ```/users/:user_id/ride_requests```. The address would also have a method or action that goes with it. The actions being:
+1. GET: For retrieving or reading resources from the back-end.
+2. PUT: For updating or rewriting an existing resource with a new version of that resource
+3. POST: For creating a new instance of that version on the back-end.
+4. PATCH: For updating a portion of an instance of that resource.
+6. DELETE: For deleting the resource from the back-end memory.
+7. OPTIONS: To get the list of possible methods allowed for this resource.
+
+While REST has some rules, they are kept malleable enough for users to adapt certain aspects that may make more sense to their code. But with this malleability comes the chance of vulnerability either in broken code or in terms of security.
+
+For instance, a user may use only one of these methods to perform all actions like we mentioned above. We can send a get request, and append an extra key-value pair to the data, such as ```"action": "delete"``` which tells the server what action to perform. The level of policing and checks depends on the tools and implementation of REST-based frameworks in your language, but most frameworks will let you get away with this type of change, after all if is only your team that is going to implement the front-end and the back-end it is as simple as creating an understanding between the teamates that work on each of these. But, while this level of adaptability is possible, these are not generally best practises and other developers who join your team may not understand this design and may create some overhead to their learning curves, this effect is compounded in case you want to release your APIs for external people to integrate into their systems, deviating too much from the standard ways of designing can be a source of confusion for the external teams and cause friction during learning, especially if the changes are not justifiable.
+
+That said, there are some open ways of deviating from the norms, especially when it comes to actions. The REST API paradigms are designed around objects, things or nouns. For example, you were implementing a video-sharing application. The steps involved with the video before it goes live would be to upload a draft version to the service, make changes to it like its name or edit its length, and then press the publish button. If you were to strictly follow the REST APIs, you can perform a POST request to create the video resource on the service. But after we complete editing it, how do we tell the service that the same resource is ready to be published. There is no action from the above list of actions that can help us. POST would have done the job but that was used to create the resource. We can possible use PUT to update the state of the resource to *published*, but when publishing a video it rarely involves just that. The video would have to be processed and possibly shrunk to its lowest size in memory. And if the original video has to be retained, this step is not as simple as overwriting the exisiting resource, a new **published video** resource would have to be created. To resolve this we can deviate from strict REST principles and add an action word or verb to the end of the address. In this case it is ```/videos/:video_id/publish```
+
+The REST principle prescribes having a *stateless* back-end. A stateless back-end means that whatever is required for the request to be fulfilled is included with the request itself. For example if the resource is a user's profile on a social media site, and the user is currently trying to create it. As part of creating the profile the user provides their name, their affiliation and a username. After they submit the form, the back-end performs a lookup against all other usernames and the back-end finds that the username that they requested is currently already assigned. The back-end will now prompt them to enter a new username. One has to keep in mind that the back-end will only create the entity that represents the user in the database if *all* of the information is valid and correct. When you entered a new username, there are two choices for the front-end: send only the updated information, or send the entire profile again. Since we already discussed that the information sent in the intial request was not saved in the database, sending only the updated information assumes that the back-end had saved this information in some intermediate memory and will be able to updated only part of the information. In this option it is said that the back-end is retaining state of resource and hence is stateful.
+There are some possible pitfalls in a stateful implementation of the back-end. Occasionally for certain reasons the back-end may stop functioning properly and may have to be restarted. Or there may be an implementation where there are multiple back-end servers that are running in parallel which we'll talk about in the section on load balancing below. In the first case, since the resource from the intial request is stored in some intermediate storage, whatever data is stored in that intermediate storage may be lost when the back-end system crashed. In the second case, the second request will have to be routed to the right instance of the back-end, this can be a difficult thing to implement and can cause other issues such as too many requests can be loaded onto one machine unfairly while another machine is relatively free. For these reasons, it is always better to implement the APIs as stateless systems. This means sending the entire resource again and assuming each request is a fresh request without the server needing to know anything about the previous requests. In certain cases if the server needs to know about the previous requests, then the request will need to encapsulate information about all previous requests inside itself.
 
 ## Application Architecture
+Let's put these three parts together to discuss a simple architecture of an application. We discuss the flow of the requests and responses from the front-end to the back-end for the 'search ride' user flow.
 
-As you can see in the diagram, an application consists of a frontend and a backend.
-
-List the parts of the architecture.
-Front End
-Connecting Layer
-Server
-
-Serverless
-
-Microservices
-
-Model View Controller
+### Ride-Hailing
+- On the front-end the user enters 3 pieces of information: the starting point of their journey, the destination and the type of ride that they would prefer. If the user mentions that the application should consider their current GPS location as the start point then the controller of the model-view-controller will have to talk to the GPS APIs on the device to get the current GPS location.
+- The front-end wraps up this information as a ride-request object or resource discussed above and sends it over the internet to the back-end server API which has the form POST /ride_requests.
+- The back-end verifies this incoming information and looks for possible inconsistencies, if none, it will register the request on a database and start processing the request.
+- To process the request, the back-end will run an algorithm that will request data about possible drivers while filtering those that are too far away from the rider, are currently on a ride or are not of the ride type that the rider had shown preference for.
+- Once the processing is complete and a driver identified, a database entry is created for driver which indicates that the back-end has chosen them and they now need to accept or deny the ride request.
+- The front-end of the driver's application will periodically send requests to the back-end asking if any new requests for rides have come up since the last time. The back-end will look into that database to see if any ride requests have been generated for this driver. If there have been any generated then the back-end will wrap this information as something that we can call a driver-ride-request object and send it as a response to the driver.
+- The front-end of the driver's application will parse the response and populate the ride-request model. The controller wil create a pop-up, which the view will display. The pop-up will attempt to catch the attention of the driver informing them of a new request. The driver will be provided two button which the driver can use to accept or the deny the ride.
+- The choice will again be wrapped up in another object that expresses this choice and sent to the back-end. To maintain statelessness of the requests, information about the original request will also be included in this object. The back-end will use this indentifying information from the original request that has been wrapped into this request and if the driver had accepted the ride then the back-end will map the rider and driver and register that information into the database. If the driver had denied the ride request then the back-end will restart the process of looking for the driver by looking into the list of filtered drivers again.
+- Once the processing is complete and a driver identified, the back-end will wrap this information into the response object of the type discussed above and send it as a reply to the original request.
+- The front-end will read this response and parse the parts into its model or datamodel. Since the model has changed, the view will also be changed to reflect this new information to the user.
