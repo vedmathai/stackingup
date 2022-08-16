@@ -88,6 +88,17 @@
   font-size: 24px;
   font-family: var(--font-family-content-text);
 }
+
+code {
+  color: var(--white-color);
+  background-color: var(--dark-color);
+  font-size: 18px;
+  padding: 20px;
+  width: 600px;
+  display: block;
+  border-radius: 15px;
+  margin-top: 36px;
+}
   
 .App-link {
     color: #61dafb;
