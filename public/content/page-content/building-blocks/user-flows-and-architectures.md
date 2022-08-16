@@ -106,6 +106,11 @@ Checkout is a slightly more complicated flow, that more often than not will invo
 This is an interesting case, where two applications, neither of which have complete control, work in tandem and confidence to complete the entire user's journey.
 
 ### Customer service
+Customer service user flows that involve just display FAQs are simple and can be just a list of question and answer pairs that are stored in database and served by the back-end.
+
+However, customer service user flows that use chatbots are much more complicated. While similar to how search is performed, chatbots have some more paradigms that make them little more sophisticated than just a pure search. Apart from classifying the query and mapping them to the most relevant answer, chatbots also can look to see the completeness of a query, for example if you were asking for help with your order and forgot to mention the 'order id,' the chatbot can recognize what is missed and prompt the user to now supply it.
+
+Another such paradigm is that maintaining state. Sophisticated chatbots can be a little more human like in that they can use information provided in a previous interaction and augment that information with any new information that they may receive. When using chatbots people are encouraged to use their natural language to query, as opposed to a pure keyword search. Parsing the different ways humans can say the same thing in their natural language is a non-trivial and involves natural language processing models. These models can be stored in a database and retrieved at the time of parsing the query.
 
 ### Maps
 To perform some reductionism, maps are just a method of displaying data. This data is that of shapes that represent roads, buildings and other physical features found in the real world (or even [a fictional world](lotrproject.com/map/)). When traditionally viewing a location on paper a user would have choices of looking at the location from different levels of ganularity. For example, they can view the location on a map of the whole world, at the country level, province level or even a city level. For each of these granularities the amount of detail shown per square meter of the real world increases. Since the amount of space is limited and the grosser granularities only a few prominent features are shown.
@@ -117,16 +122,23 @@ One option is to download the entire detailed map at one go and as the zooming-i
 For every zoom level a portion of the map called a tile is stored in a database. Tile can be queried for using the latitude, longitude and zoom level. The same system works when the latitude and longitude changes for a given zoom level. In other words, when panning.
 
 ### Create and manipulate account details and settings
+For most account details, the flow data is similar to that adding a new user, where details are sent to the back-end and stored into a database. An interesting application of this are settings details that effect the look and feel of the application itself. This can be as simple as personalizing the colours used for the application to even changing the workflows for the users.
+In a very simple application the front-end is built using static CSS and HTML and where the data or the model defines what the actual values displayed by the HTML element would be. The model usually doesn't control the HTML and CSS directly. But in this case the structural sections of CSS and HTML is predicated by the values in the model. An example of this choice whether to display to controls on the screen that usually only the admin or those with higher permissions are allowed to see. In frameworks such as react the HTML is controlled by a React component, which itself is part of the controller. This means full power of usual programming languages, things that are not usually available in vanilla CSS and HTML, such as if/else statements, are now available and can be used to manipulate the HTML and CSS. In the example case mentioned above, the code would look something like this pseudocode:
+```
+if role == 'admin':
+    show_list_users_components = True;
+```
 
 ## Abstract User flows
-
 ### Display Textual and Tabular Information
-
+As mentioned [here](user-flows-and-architectures), these are the simplest of all the interactions between front-end and back-end. Since this form of interaction was the first type of interaction between two computers over the larger internet, it is what you get right out of the box with HTML. In fact all other interaction build from this, sending, receiving and displaying text.
 
 ### Manipulate Form Information
-
+If displaying text and tabular information is the bread and butter of computer-to-interaction over the internet, manipulating form information makes up the other half, namely human-to-computer interaction. Many interactable elements come out of the box with HTML, such as buttons, radio buttons, checkboxes and input text fields. Like in the many more specific userflows previously mentioned, the front-end will wrap up this information into an object and send it over to the back-end. The contoller may optionally be able to manipulate the data before it is sent. An example where that can be done is representing boolean data from checkboxes as a list of only those that are checked while leaving those that are unchecked out, in order to save space.
 ### Start a Job
+To start a long job the front-end sends a request to the back-end asking the back-end to start the job. Usually the front-end expects a response from the back-end in near real-time, because even though the 
 
+Polling
 
 ### Upload and Download Objects
 
