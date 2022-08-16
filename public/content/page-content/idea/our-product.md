@@ -2,7 +2,7 @@
 On this page, we will together come up with an idea and the user flows for an application that we will later and build out and deploy. 
 
 ## The Inspiration
-I an cook a bit, and by a bit that means I know the recipe to about 2-3 dishes by heart but depend on google and the any number of sites that list recipes when I am in the mood to try anything new. When looking for recipes, either they end up being too difficult or I don't have any number of the ingredients that are required. This requires me to loop through recipes and map out what ingredients and is actually on my shelf or in my fridge.
+I can cook a bit, and 'by a bit' I mean I know the recipe to about 2-3 dishes by heart but depend on Google and the any number of sites that list recipes when I am in the mood to try something new. When looking for recipes, either they end up being too difficult or I don't have any number of the ingredients that are required. This requires me to loop through recipes and map out what ingredients and is actually on my shelf or in my fridge.
 
 Often, with my computer science hat on, I wonder how much easier it would be if I had a reverse lookup for recipes. I suppose an application to which if I tell what ingredients I have, it would search only for recipes for which I actually have the ingredients.
 
