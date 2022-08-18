@@ -136,27 +136,77 @@ As mentioned [here](user-flows-and-architectures), these are the simplest of all
 ### Manipulate Form Information
 If displaying text and tabular information is the bread and butter of computer-to-interaction over the internet, manipulating form information makes up the other half, namely human-to-computer interaction. Many interactable elements come out of the box with HTML, such as buttons, radio buttons, checkboxes and input text fields. Like in the many more specific userflows previously mentioned, the front-end will wrap up this information into an object and send it over to the back-end. The contoller may optionally be able to manipulate the data before it is sent. An example where that can be done is representing boolean data from checkboxes as a list of only those that are checked while leaving those that are unchecked out, in order to save space.
 ### Start a Job
-To start a long job the front-end sends a request to the back-end asking the back-end to start the job. Usually the front-end expects a response from the back-end in near real-time, because even though the 
+Due to user's expectations of fast responsiveness from the applications, most request-response pairs from the front-end and back-end are expected in a near real time. For jobs that take longer, the user would like to see the progress of the job. When a front-end sends a request through HTTP the back-end performs the work and sends a response, if the *work* takes too long then the back-end will not be able to respond, the front-end will not be able to provide updates and to the user it will feel like no action was taken. 
 
-Polling
+To start a long job the front-end sends a request to the back-end asking the back-end to start the job. When usual requests arrive, the software that is able to handle the request, called a server, will usually handle the request on a thread. A thread is a logical division of a set of instructions for a particular program. In order to best utilize the CPU's time, programs are divided in to invidual instructions and the CPU toggles between instructions of different programs executing them alternatively. There are many ways for how the CPU chooses whether to execute the next instruction on the current thread or to move on to executing an instruction from the next thread. When the long-job-creation request arrives at the back-end, it has to do both respond to the creation-request and perform the job.
 
-### Upload and Download Objects
+The way the thread would solve this is by registering the job-creation request in a queue that is implemented somewhere common, say a database, and then return immediately to the user a response that the job has started. Simultaneously, there would a set of worker nodes that keep looking to see whether there are any new jobs, if there are then they would take that job off the queue perform the required job and save the outcome in another common location.
 
+When using asynchronous communications a server can contact a front-end only as response to a request. There are some two-way communications between front-end and back-end where a back-end can push a notification to a front-end, but they are complicated to implement and has a lot of overhead. Instead, in order to track the progress of the job - whether it is still under processing or if it is done, the front-end periodically sends a progress-check request to the back-end with the *job ID*. The back-end is able to look into the results database and see if a result has been generated for the job. If yes, then it responds to the front-end with a message that informs the front-end saying that the job is done. After this the user can issue further requests to consume the results of the job. This repeated and periodic checking with the back-end is called polling. There is a trade-off when deciding the frequency at which the front-end should poll the back-end. Too often and the back-end can quickly get overwhelmed, especially once we consider the number of other users which are going to be polling the same back-end in parallel. But polling too infrequently can have an impact on how the user percieves the speed of the system.
+
+The start job request would be of the following:
+```
+POST /jobs
+body = {
+    "video_id": "abcd123",
+    "format": "MP4"
+}
+```
+
+The response to that would be
+```
+{
+    "job_id": "xyz789"
+}
+```
+To poll the status the request would like
+```
+GET /jobs/:job_id/status
+```
+
+To which the reponse could be:
+```
+{
+    "job_id": "xyz789"
+    "status": "in progress"
+}
+```
+### Upload and Download Files
+Most other textual data that the front-end deals with would be those within the confines or sandbox of the front-end itself. It is either data that is received from the internet or explicitely provided as input by the user. To access the user's local filesystem, the application can only go through the browser it is running on. That means, if the user needs to upload or transfer a file, they would click a button on the front-end to indicate that. The controller would then request the browser to open a file explorer, which the user will use to navigate their filesystem and choose a file they would like to upload or send. Though there is no technical reason why the javascript would not be able to just list the files and be able to manipulate them itself, it is a matter of security. If the browser provides such power to any website code that is run, then there is no stopping hackers from creating websites that will secretly read all of the user's files and uploading them. For this reason, arbitrary reading of the filesystem by websites is not allowed.
+
+Once the file is pointed to though, the browser allows the application's controller to read the file as a binary. This binary can then be sent to the back end enclosed in a request body.
+
+On the back-end file binaries can be:
+- Written on the local hard drive
+- Written into a database as a Blob or alternative format
+- Processed as a file-like object by the program
+
+When saving the file on the local hard drive, the developer has to make sure that whatever use they have for the file is temporary since storing the file on a particular physical system in a way that not all systems running this program have access to this data breaks the concept of statelessness of the back-end. That said, it is okay to use the local system as temporary storage to help with file processing before the processed file is then saved in a more permanent place elsewhere.
+
+However, even when using local storage for files, care should be taken that the temporary files are disposed of periodically or immediately or else there runs a risk of there being a memory leak. A memory leak is when memory is used by a system without all links to that object being stored lost. Since the links are lost, these objects can not be move or deleted later, without manual intervention. Usually, UNIX systems guarantee that the /tmp folder will periodically be purged. But care has to be made to handle the purge schedule. It may happen that the purge will not happen until after the whole memory is filled, especially when dealing with large objects such as videos.
+
+Some of the processing that a usual application would have to perform on these files are:
+- Unzip the file into a folder and perform filesystem manipulations on the folder such as traversing it and reading the files.
+- Converting the file format or processing it using software that is external to your backend service. This usually means saving the file onto the disk and invoking the external process using command line invocation command, this usually happens when the software is written in a different language from the application's language.
+- Read the data from the file and process it, this usually can be as simple as a file read to reading data from a pdf or another format meant for publishing and converting the data into plain text.
+
+Downloading a file is similar to the upload with most processes described above in reverse.
 
 ### Play Media
 
 
 ### Emails and Instant Messages
-
+TBD
 
 ### Document Manipulation
+TBD
 
 ### Manipulate Vectors, Images and 3D shapes
 This data can be vectors or rasterised images. Vectors are math or code that explains to a computer how to draw shapes, while rasterized images store colour data for each pixel individually. Vectors are 
 
 
 ### Display and Interact with Data Visualizations
-
+TBD
 
 ### Voice Calls
-
+TBD
