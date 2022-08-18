@@ -2,26 +2,26 @@
 On this page, we will together come up with an idea and the user flows for an application that we will later and build out and deploy. 
 
 ## The Inspiration
-I can cook a bit, and 'by a bit' I mean I know the recipe to about 2-3 dishes by heart but depend on Google and the any number of sites that list recipes when I am in the mood to try something new. When looking for recipes, either they end up being too difficult or I don't have any number of the ingredients that are required. This requires me to loop through recipes and map out what ingredients and is actually on my shelf or in my fridge.
+I can cook a bit, and 'by a bit' I mean I know the recipes to about 2-3 dishes by heart but depend on Google and or other search engines to provide me recipes when I am in the mood to try something new. When looking for recipes, I often find that they either end up being too difficult or I don't the ingredients that are required. This requires me to browse multiple recipes in order to map out what ingredients and is actually on my shelf or in my fridge.
 
-Often, with my computer science hat on, I wonder how much easier it would be if I had a reverse lookup for recipes. I suppose an application to which if I tell what ingredients I have, it would search only for recipes for which I actually have the ingredients.
+However, with my computer science hat on, I wonder how much easier it would be if there were some form of a reverse lookup for recipes. This could be an application to which if I can provide the list of what ingredients I have, it would be able to filter our and show me only recipes for which I actually have ingredients available.
 
 ## Competition
-At this point it is always best to Google the idea and see if anyone has implemented it. Search with alternate wording if required. Its not wholly commesurations if someone has, you still deserve a pat on your back for almost originally and independently coming up with the idea. If it has not been implemented then congratulations are in order, now you just need to build it out and you are sitting on a large paycheck. We kid, of course. 
+And then I meet you, the reader, and also a budding entrepreneur. I tell you about my idea and with your entrepreneural hat on, it seems to you that if this tool does at the outset seem useful, and if it does, why not implement it and make it available to a lot more people, help them with their culinary needs and possibly make some money on the way too. At this point it is always best to Google the idea and see if someone as has already implemented it. It may be helpful to use alternate wording too, if required. More often that not you will find that such a tool already exists, however, it isn't wholly commesurations if someone has, you still deserve a pat on your back for almost originally and independently coming up with the idea. And if, by some some chance, it has not been implemented yet, then congratulations are in order: now you just need to build it out and you'll be sitting on a large paycheck. We kid, of course, things are seldom that easy. :)
 
-Now for the reverse-recipe lookup idea, I do do a search and find
+We perform this search for the reverse-recipe lookup idea. I find a few applications already out there that do something similar to what I want solved. These are:
  - SuperCook
  - AllRecipes Dinner Spinner
  - BigOven
 
-At first cut they are all pretty good, an apart from searching for recipes by name, they allow for filtering of the recipes based on ingredients to include and not include.
+At first cut, you as the entrepreneur think that they are all pretty good. And apart from searching for recipes by name you find that they allow you to filter the list of recipes based on what ingredients to include and not include.
 
-Let's try them. We do and we find out their search is too strict to be adapted to the idea. For example, they strictly only include recipes that have all of the ingredients in the 'ingredients to include.' That is is a little different from what the inspirational use case was. If on hav a list of items in the fridge and wants recipes that can be made with all of them or a subset of them. So it looks like there is some scope for innovation here: doesn't seem like much. But companies have been made or gone bust on much less.
+But on deeper digging, you find possible areas of improvements, their search is too strict, whereas we require a our search algorithm to be a bit looser. For example, they strictly only include recipes that have all of the ingredients in the 'ingredients to include.' That is is a little different from what the inspirational use case was. If on hav a list of items in the fridge and wants recipes that can be made with all of them or a subset of them. So it looks like there is some scope for innovation here: doesn't seem like much. But companies have been made or gone bust on much less.
 
 ## Sketching it out
-Starting from the inspiration section we need a way for users to see a list of recipes given a set of ingredients. Looking at the list of user flows in the previous page, we can say that this userflow maps to search and filter. This becomes the anchor point around which to our entire flow design. In any search, there would be a page that has a search bar and a search listing page that shows the results of the search. This gives us at least two pages. 
+Our next step will be to sketch out what the idea actually means while using what is written in the inspiration section above as the base. The starting point of the user journey is to allow a way to provide the list of ingredients and the quanities of each ingredient that they already have in their pantry. After providing the list of ingredients the user expects a list of recipes which can be created given the ingredients in the list as the output of the application. Looking at the list of user flows in the previous page, we can say that this userflow maps to search and filter. Could this become the anchor around which the entire flow is design? It is good to ask this question. At this point, it could be, but we shall see if there are any better user flows. In any search, there would be a page that has a search bar and a search listing page that shows the results of the search. This gives us at least two pages. 
 
-In the idea mentioned above we need a way to tell the application what ingredients we have at home. The simplest way to do this is to write it down into a textfield as a data entry flow.
+What would be the best UI elements to use to capture the list of ingredients from the user? The simplest way to do this is to write it down into a textfield as a data entry flow.
 
 Once we search for our recipes and see a search listing page, we then have to actually see a recipe so as to complete the entire cycle of searching for and viewing a recipe. 
 
@@ -38,7 +38,7 @@ The search page currently has just a search bar and place to add ingredients ava
 
 Yes, there is a method called 'chips.' These use ui borders, change in background color or space to demarcate different elements. These appear dynamically based on what the user is typing. This makes it clear to the user what is being considered a different item in their list of items available or not.
 
-We don't have to necessarily use chips, we can even make the ui input more dynamic, everytime the user presses enter the cursor can complete the current line and move the next line if necessary.
+We don't have to necessarily use chips, we can even make the UI input more dynamic, everytime the user presses enter the cursor can complete the current line and move the next line if necessary.
 
 If we by chance we have a list of ingredients, we can even use that list to validate the user's input. To elucidate quickly, if we have list of possible ingredients, as the user types in a word, the word will be use to look into the list and if a word exists, we now know that the chances of that word being bogus are pretty low. This this and the previous flow lead us to another good general principle of design - validate on input. Pushing the validation stage to be as early and close to the user as possible allows us to work with the user interactively to weed out possible small mistakes or allow the user the rectify their input in case the application does not give positive replies.
 
