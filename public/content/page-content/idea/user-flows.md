@@ -196,7 +196,7 @@ Application that allow you to write documents on a layout that represents, for e
 
 The only data for text editors are usually the text themselves. But the data driving WSIWYG editors are more expressive with the ability to save information such as which part of the text is bold or italics, what the font or colour of certains parts of the text are. 
 
-Like mentioned for data manipulation, document editors such as google docs perform continuous saves of the document. They also allow collaberative editing where the changes made by a user can be seen by another user on the same document.
+Like mentioned for data manipulation, document editors such as Google Docs perform continuous saves of the document. They also allow collaberative editing where the changes made by a user can be seen by another user on the same document.
 
 Another form of documents are spreadsheets. These are sheets of cells arranged in columns and rows. Users can enter data into cells. These have evolved over the years to be more complicated than just storing data in cells. Math operations can be performed between cells and more complicated instructions bordering on code can be written to manipulate the data in the cells.
 

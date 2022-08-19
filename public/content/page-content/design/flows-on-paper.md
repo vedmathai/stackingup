@@ -1,0 +1,1 @@
+Draw the flows on white paper in order to show how brainsstorming works. THese will get transated to figma later.

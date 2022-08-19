@@ -193,20 +193,113 @@ Some of the processing that a usual application would have to perform on these f
 Downloading a file is similar to the upload with most processes described above in reverse.
 
 ### Play Media
+If the media is stored local to the system, the front-end will use a decoder from the codec to decode the video format. However, when the media is being streamed. The front-end will keep querying new batches in the stream from the back-end. The back-end will store this data in a database, split the video down into smaller packets and serve them as requested.
 
+The request would look something like
+```
+{
+    "video_id": "video123",
+    "start": "00:10:00",
+    "length": "00:01:00"
+}
+```
+The above request is for one minute's worth playback of the video starting at the tenth minute of playback. If the window lengths are fixed and understood between the front-end and back-end, it can be remove from the request.
+
+If it takes about five seconds to get new data the front-end's controller can choose to request the data for the tenth minute mark a the 9:55 minute mark. But this would arrive just in time and not leave any room for safety, so the controller can choose to make sure that it always has 15 seconds of video playback ready at any given point by requesting the data at least 15 seconds before the playback reaches that point.
+
+This request format fits in very well to perform the seek operation too.
 
 ### Emails and Instant Messages
-TBD
+Emails have been around since the dawn of the internet, and just like hypertext-based websites browsing, make up one of the most fundamental use cases of the Internet. The basic flow of how emails are implemented are: 
+- compose a message
+- point the message at an address and send.
+- On the side of the receiver, at that address, an email server is constantly listening and when a message arrives, it stores it in a database.
+- The reciever's device then keeps polling their database to see if any new message as arrived and if yes it populate the inbox.
+
+This skeletal flow is similar for both emails and for instant messaging.
+
+Email protocols were developed openly and as a system of request-for-comments, which are designs that are openly discussed and adopted by peer-review and internet standards body. These make these protocols a standard that is implemented almost similarly from vendor to vendor.
+
+Email has three such protocols, IMAP, POP3, and SMTP. These were created in an age when abbreviations were all the rage. To explain how emails work, each when a user create an email ID, they create the ID for at a particular domain. In the user@domain the portion after the '@' symbol is the domain. Using a DNS the IP address of the domain can be retrieve. At that IP address an email server should be running that is listening a particular port for an incoming email message. When sending a message a sender will compose a message and will use the SMTP (Simple Mail Transfer Protocol) to do all of the DNS mapping and sending to the email server. In order to retrieve the message the reciever's front-end will use IMAP (Internet Message Access Protocol) or POP (Post Office Protocol) to sync the messages from the server to their device. The major difference between the two protocols being IMAP does not purge the mails from the server upon retrieval while POP does.
+
+Modern instant messaging works a little differently, in that there is a central server to which messages are sent. The server then is stores the messages while the intended reciever will be delivered the message after it polls the server for messages, this may sound very similar to emails, and indeed they are very similar, it is just a difference of flavours for most part.
 
 ### Document Manipulation
-TBD
+A WYSIWIG (What-you-see-is-what-you-get) text editor is a canonical example of a front-end where the contrabutions and interactions from and between the model, view and the controller are prominent enough that they can be used to explain how the parts of the MVC work and interact. 
+
+Broadly the parts of a WYSIWIG editor are the text display, and the tools to format the text.
+
+The text that is to shown is stored in the model. Since these texts allow for character level formating such as colour or stylization, behind the scenes the text is actually marked up text. As the user types into the editor area the model behind is updated. To change the format of a certain part of the text, the user can drag their cursor over the text and press a button. To process this button click the controller has to retrieve the range over which the user had highlighted and insert markup tags before and after that text so that the view can now display the change. If the user toggles back that change, say make some italized text unitalized again, then the controller would have to remove that tag from the text in the model, and view will immediately display the updated formatting.
+
+We mentioned Google Docs in the [userflows](/user-flows) document, but we mention it again. Recent years have seen editors that work on documents that are stored on the internet of which Google Docs is an example. Google Docs performs instantaneous or near-instantaneous saves. Periodically, the editor front-end will send a request to the back-end with the current document content. The back-end would store this information on a database along with meta information about when the document was uploaded.
+
+These browser based editors like Google Docs also may also provides an inbuilt version control system. A version control system keeps track of every version of the document. These systems can either store entire copies of the document in the database, or, to save space, can store only the string of edits that have been performed on them such that the edits may be replayed from the beginning to reach a particular point in the documents history.
+
+Collaberative editing tools, of which Google Docs are one, are interesting because they allow different user to edit the document live. This means when two users are viewing the same document on their own machines, one user can watch the other user's cursor as that user edits the document. The users may also edit the document simultaneously. This is a little more complicated because to determine the cursor's position, it has to have an anchor - the point from which distance is calculated - and an offset - the actual distance. If we take the anchor for the cursor of user 2 to be the start of the paragraph and the offset to be character 50, then if one user starts adding character to or deleting characters from the start of the paragraph, then user 2 will find their cursor moving unnaturally to the next or previous characters, we would want the cursor to remain on the same word, regardless of added or removed characters. To achieve this each character or word should be individually and uniquely identifiable so the the cursor remains with that character regardless of relative location to the beginning of the paragraph of any such anchor.
+
+The second issue is of overwrites and race conditions, what if it so happens that the first user edits a character in the document, and almost immediately but still after the first user, the second user edits the same character. If the update about the first user's edit doesn't reach the second user in time, the second user would have edited a stale document.
+
+As one can imagine to be able to perform this form of collaberation, the front-end periodically sends updates to the back-end which then stores them on a database with an updated timestamp. The second-user's front-end will also periodically request the back-end to see if there are any updates stored in the database for that document. If there are, then the back-end will respond with the updated document. The same goes for the each user's cursor position or any other meta data related to the document.
+
+Excel sheets and other spreadsheet tools, peform various mathematical or statistical functions on rows and columns, these are functions that the front-end's controller would be be able to perform.
 
 ### Manipulate Vectors, Images and 3D shapes
-This data can be vectors or rasterised images. Vectors are math or code that explains to a computer how to draw shapes, while rasterized images store colour data for each pixel individually. Vectors are 
-
+Displaying vectors and images are view elements in a model view control. We described the difference between rasterized images and vectors in the section on maps above.
+Some applications help manipulate these elements. We spoke about functions such as cropping, blurring and colouring in the [user journey](/user-journeys) page. These are mostly math manupilations and formulas that can be performed by the front-end. For example, you may have structural data for a 3D object. To be able to display this object on a 2D screen the data will have to projected on to that plane. This involves trignometric equations. Most of these are implemented by graphics libraries, that can optionally use a graphics card to speed up the process as most pixel level calculations can be performed in parallel.
 
 ### Display and Interact with Data Visualizations
-TBD
+Visualizations are another example of MVC working in tandem with prominent contributions from each. Controllers work on data points and convert them to displays such as shapes or locations in a space. The data itself is in the model. The view finally displays this data. There are many famous visualizations such as bar chats and pie charts and accordingly there are many ready to use libraries that are able to create these from the data. But other libraries provide more control over how the visualizations are create, these sometimes are also interactive so can be clickable or draggable. The controller works with all of these inputs.
 
 ### Voice Calls
 TBD
+
+
+## Our Architecture
+![](http://localhost:3000/content/page-content/building-blocks/imgs/photo.JPG "Title")
+
+We discussed how the different user journeys map to the same architectural elements, a front-end, back-end, a communication method and a storage. We shall now discuss how these user journey and architecture elements work together to make a complete application. The application we shall discuss will be the ingredients-to-recipe lookup application we discussed [here](/our_product).
+
+To recap the application predmominently had:
+- search
+- sort
+- filter
+- document manipulation
+- text and tables data display
+- data visualization 
+
+## Search
+The front-end will display a search bar where users can add their current stock of ingredients. As we mentioned before we can make these ingredients chips or new rows in a table as the user is adding them to make it clear that these are to be treated as discrete items.
+
+When the user clicks search, the front-end will send these items to the back-end. The structure of the request can be of the form
+
+```
+GET /recipes/search
+
+{
+    "items": [
+        "potato",
+        "garlic"
+    ]
+}
+```
+The response will be a list of recipe IDs, and some metadata for the user, that will be ordered according to the most relevent recipes firsts. Since there could be many recipes we can employ pagination here. Therefore the response could be:
+
+```
+{
+    "page": 1,
+    "recipes": [
+        {
+            {
+                "recipe_ID": "recipe_123",
+                "recipe_name": "Baked Potato",
+                "preperation_time: "15 mins",
+                "difficulty": "Low"
+        }
+    ]
+}
+
+On the back-end the server should have some search mechanism that is able to retrieve the best matching recipe for the given ingredients.
+
+The recipes themselves need to be stored somewhere, for this choose to have a relational database that stores the recipes.
+
+The second user flow for our application is going to be a store of the user's current set of ingredients. These need to be kept track of on the database. But to first know which user is using the application we'll need to implement a sign-in mechanism too.
