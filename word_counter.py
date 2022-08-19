@@ -9,10 +9,11 @@ def count():
         pages = os.listdir(chapter_path)
         for page in pages:
             page_path = os.path.join(chapter_path, page)
-            with open(page_path) as f:
-                content = f.read()
-                words_count = len(content.split())
-                page2count[page_path] = words_count
+            if os.path.isdir(page_path) is False:
+                with open(page_path) as f:
+                    content = f.read()
+                    words_count = len(content.split())
+                    page2count[page_path] = words_count
 
     print(sum(page2count.values()))
     for key, value in sorted(page2count.items(), key=lambda x: x[1]):

@@ -48,11 +48,6 @@
                 "display_name": "User Flows and Architectures",
                 "id": "user-flows-and-architectures",
                 "content_location": "building-blocks/user-flows-and-architectures.md"
-            },
-            {
-                "display_name": "Our Architectures",
-                "id": "our-architecture",
-                "content_location": "building-blocks/our-architecture.md"
             }
         ]
     },
@@ -63,7 +58,7 @@
             {
                 "display_name": "Product Managing",
                 "id": "team-product-managing",
-                "content_location": "team/product-managin.md"
+                "content_location": "team/product-managing.md"
             },
             {
                 "display_name": "Team Organization",
@@ -86,11 +81,6 @@
         "display_name": "Design",
         "content_path": "",
         "children": [
-            {
-                "display_name": "User Flows",
-                "id": "design-user-flows",
-                "content_location": "design/user-flows.md"
-            },
             {
                 "display_name": "Flows on Paper",
                 "id": "design-flows-on-paper",
