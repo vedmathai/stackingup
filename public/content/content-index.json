@@ -82,9 +82,14 @@
         "content_path": "",
         "children": [
             {
-                "display_name": "Flows on Paper",
-                "id": "design-flows-on-paper",
-                "content_location": "design/flows-on-paper.md"
+                "display_name": "Whiteboarding",
+                "id": "whiteboarding",
+                "content_location": "design/whiteboarding.md"
+            },
+            {
+                "display_name": "Design Elements",
+                "id": "design-elements",
+                "content_location": "design/design-elements.md"
             },
             {
                 "display_name": "Wireframing",
@@ -95,16 +100,6 @@
                 "display_name": "User Flows Validation",
                 "id": "user-flow-validation",
                 "content_location": "design/user-flow-validation.md"
-            },
-            {
-                "display_name": "Our Flows",
-                "id": "our-flows",
-                "content_location": "design/our-flows.md"
-            },
-            {
-                "display_name": "Our Wireframes",
-                "id": "our-wireframes",
-                "content_location": "design/our-wireframes.md"
             }
         ]
     },
