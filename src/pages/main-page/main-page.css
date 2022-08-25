@@ -147,4 +147,8 @@ img + em {
   .content ul li {
     font-size: 20px;
   }
+
+  .content p img {
+    width: 90vw;;
+  }
 }
