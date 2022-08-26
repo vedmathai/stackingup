@@ -1,7 +1,7 @@
 # Whiteboarding Flows
 
 ## Why whiteboard flows?
-Before diving head first into coding up the application, it helps to have a blueprint for your application. Having a Morth Star helps thinking through the application from the front to the back and weed out any potential early pitfalls. 
+Before diving head first into coding up the application, it helps to have a blueprint for your application. Having a North Star helps thinking through the application from the front to the back and weed out any potential early pitfalls. 
 
 When working alone it can often be very tempting to start coding up the application. The thrill of seeing a new idea come to life in the form of a demo or even a working model beats boring paper work any day. But there are many reasons why it makes sense to plan out the project before starting.
 
@@ -22,10 +22,10 @@ To recap, the crux of our idea - which we christened, 'In my Pantry,' is to allo
 To start whiteboarding, it as simple as drawing out that main flow. To search for a recipe, user would have a search bar and a screen to view the search results. 
 
 ![Simple Search Bar](/content/page-content/design/whiteboarding-imgs/search-bar.png "Simple Search Bar")
-*Fig 1: Simple Search Bar*
+*Fig. 1: Simple Search Bar*
 
 ![Simplest Search Results Page](/content/page-content/design/whiteboarding-imgs/simplest-search-results.png "A Very Simple Search Results Page")
-*Fig 2: A Very Simple Search Results Page*
+*Fig. 2: A Very Simple Search Results Page*
 
 It helps to think of the flows in terms of screens and action elements on the screen. Other developers may like working with more abstract representations such as boxes and flow diagrams. While the more experienced may find such flow diagrams more concise and even allow them to capture more details in a more generic way without having to draw out screens, others may find drawing out screens provide a more realistic view. This could be a matter of taste, but we go with drawing out the screens in as much detail as possible, since, as we said, it is easier for people new to designing to follow.
 
@@ -40,7 +40,7 @@ To alleviate this, can the user be shown some information about the search resul
 We draw some examples of this on the screen.
 
 ![Simple Search Results Page](/content/page-content/design/whiteboarding-imgs/search-results.png "Simple Search Results Page")
-*Fig 3: Simple Search Results Page*
+*Fig. 3: Simple Search Results Page*
 
 Readers may notice that we add the logo to this screen and a search bar too. This is an example of continuity and familiarity. The familiarity is driven by the fact that some of us may be used to these screens in our day to day activities - a reason why so many applications are designed to look similar when performing a similar action. Adding the logo helps place the user in the application and the search bar helps the user know what they searched for or even start a new search from the current screen. This kind of detailing may or may not be required and can be driven by our experiences but this goes to show how when designing on a white board there are not hard and fast rules for how deep to go and that depth and detail can be chosen based on the designer's experince and comfort and that that of their team too.
 
@@ -64,7 +64,7 @@ These questions can help us get to a version of the design where most of the fun
 The original idea was that the search would be performed on a list of ingredients. Right now the search is performed on only a single string. We go back to the search page and try to improve upon it. 
 
 ![Search Page with Ingredients Tags](content/page-content/design/whiteboarding-imgs/add-tags.png "Search Page with Ingredients Tags")
-*Fig 4: Search Page with Ingredients Tags*
+*Fig. 4: Search Page with Ingredients Tags*
 
 We add a method for users to provide a list of ingredients. The idea with this input element is that the user can type out an element into the search bar and press enter or the 'add' button, and the element will be listed below. Once the user clicks on search the search would be performed on all of these tags.
 
@@ -72,16 +72,18 @@ We add a method for users to provide a list of ingredients. The idea with this i
 We move on to the search results page. We add more functionality here. More specifically, the ability to perform filter and sort. We spoke about filter and sort at length when we discussed [user flows](/user-flows). We depict the filter as list of filter objects in the left side menu. Each filter object has a filter name and list of selectable items, which depict the filter values.
 
 ![Search Filters](/content/page-content/design/whiteboarding-imgs/filters.png "Search Filters")
-*Fig 5: Search Filters*
+*Fig. 5: Search Filters*
 
 ### Sort
 Sort is depicted as a button on the top-right.
+
 ![Sort](/content/page-content/design/whiteboarding-imgs/sort.png "Sort")
-*Fig 6: Sort*
+*Fig. 6: Sort*
 
 Clicking on the sort button opens a menu with the list of sort attributes.
+
 ![Sort Menu](/content/page-content/design/whiteboarding-imgs/sort-menu.png "Sort Menu")
-*Fig 7: Sort Menu*
+*Fig. 7: Sort Menu*
 
 Here we depict the sort as a list of attributes but we can also append the order to the attribute such as 'Difficulty: Least to Most,' or 'Difficulty: Most to Least.'
 
@@ -94,69 +96,131 @@ Another element added to the page is that of *pagination*. Pagination means spli
 * An ability to move to a particular page.
 
 ![Pagination](/content/page-content/design/whiteboarding-imgs/pagination.png "Pagination")
-*Fig 8: Pagination*
+*Fig. 8: Pagination*
 
 ### Recipe Page
-![Recipe Page](/content/page-content/design/whiteboarding-imgs/favourite-star.png "A Recipe Page")
-*Fig 9: Recipe Page*
+![Recipe Page](/content/page-content/design/whiteboarding-imgs/recipe.png "A Recipe Page")
+*Fig. 9: Recipe Page*
 
 The recipe is the final outcome of the search. Clicking on a recipe in the list of search results leads us to this page. The design of the page will be generic with the data of each recipe used to populate the exact parts of the page. The page has a heading, the ingredients, the recipe steps among other parts of the recipe. We haven't shown it in our diagram, but the recipe page can also include images of the final dish.
 
 ![Add to favourites star](/content/page-content/design/whiteboarding-imgs/favourite-star.png "Add to favourites star")
-*Fig 10: Add to favourites star*
+*Fig. 10: Add to favourites star*
+
 We add another element to the page - an ability for users to add recipes to their list of favourites, so that they don't have to search for them again in the future.
 
 ![Back button](/content/page-content/design/whiteboarding-imgs/back-button.png "Back button")
-*Fig 11: Back Button*
+*Fig. 11: Back Button*
+
 This is an example of thinking through the reverse flows. If the user is browsing through recipes, they may want to click on a few recipes to look at the details before moving to the next recipe. In this flow the user will want to go back to the search results page once already on a recipe, so that they can pick and navigate to another recipe in the list. The user can rely on the browser's back button, but implementing a back button in the application can give the feeling of completeness and isolation, that is all the actions that can be performed are performed in a consistent way and can be performed by using only buttons available inside the application's visual space.
 
 ### Hamburger Menu
 ![Introducing Hamburger Menu](/content/page-content/design/whiteboarding-imgs/hamburger.png "Hamburger Menu Button")
-*Fig 12: Hamburger Menu*
+*Fig. 12: Hamburger Menu*
+
 The other flows we described in the [our product page](/our-product), were that where users can create a list of ingredients that reflect the ingredients in their real-world inventory and they can search for recipes using that list. This inventory being a more permanent list than the transient one they can create above with the search tags. We need a way to navigate to this feature and any other possible features we may add. Here we introduce the 'menu.' One implementation of which is the hamburger menu. Menus can be displayed as a list of navigation links each next to the other in horizontal or a vertical fashion. They can also be dynamically displayed or hidden on a click of a button to save on some real estate. A form of such a menu is the hamburger menu, so named because the icon used to depict this menu looks like an abstract hamburger, even though it supposed to be an abstract depiction of the menu itself.
 
 ![Hamburger drop down](/content/page-content/design/whiteboarding-imgs/drop-down-menu.png "Hamburger Drop Down")
-*Fig 13: Hamburger Drop Down*
+*Fig. 13: Hamburger Drop Down*
 
 On clicking the hamburger menu button, the drop down shows the list of pages that the user can possibly navigate too. The location of the menu, and even the navigation links listed, can change from page to page and provides a convenient way for the user to move around in the application.
 ### Authorization
 
+Some pages of some applications cannot be reached without the user first logging in. These would especially be in cases where the page is displaying data that is specific to that user. In the case of 'In my Pantry,' the user can perform a search using keywords without signing in, but to store their inventory data in a database and to retrieve that data only for them in a way that other users do not have access to that data requires a user to signin or login.
+
+We design our login in to be a username and password challenge that the user has to fill in. There are other methods such as using a one-time-password sent to a mobile phone or email account, that can be used to login.
+
+To reach the login challenge page we add a signin option in the hamburger menu if the user is not already signed in. If the user navigates to a page that requires a login, such as the page that lists the user's favourite recipes, inventories or menus, and the user has not signed in yet, the user can be redirected to the login page.
 
 ![Signin](/content/page-content/design/whiteboarding-imgs/signin.png "Signin")
-*Fig 14: Sign-in*
+*Fig. 14: Sign-in*
+
+To be able to signin the user should have an account of that is registered with corresponding  username and password. If the user is not registered, then many self-serving applications provide the option for the user to signup themselves, that is, provide a username, password and additionally some information that allows the application to personally identify them such as a name or other such information. Other applications dealing in more sensitive data may require another user who is already known the application to register a new user with the application.
+
+Here the sign-in page has a link for the user to sign-up instead.
 
 ![Signin New User](/content/page-content/design/whiteboarding-imgs/signin-new-user.png "Signin New User")
-*Fig 15: Link to Sign-in new user*
+*Fig. 15: Link to Sign-in new user*
 
-![Signin Forgot Password](/content/page-content/design/whiteboarding-imgs/forgot-password.png "Signin Forgot Password")
-*Fig 16: Forgot Password page*
+The sign-up page has the options for the user to provide a username, a password or other personally identifiable information.
+
+Here the sign-in page has a link for the user to sign-up instead.
+
+![Sign-up for a New User](/content/page-content/design/whiteboarding-imgs/signup.png "Signup New User")
+*Fig. 16: Sign-up for a new user*
+
+The sign-up page also has the option for the user to go back and sign-in instead, in case they actually realize they already have a username registered here. This case is very common when a user tries sign-up but the application is able to inform them that the username already exists, and the user feels that there is a high chance that it was them who had registered on this application with that username.
+
+If a user is not able to remember their login credentials, they may be given the option to reset it 
 
 ![Forgot Password](/content/page-content/design/whiteboarding-imgs/signin-forgot-password.png "Forgot Password")
-*Fig 17: Link to Forgot Password on Sign-in page*
+*Fig. 17: Link to Forgot Password on Sign-in page*
+
+![Signin Forgot Password](/content/page-content/design/whiteboarding-imgs/forgot-password.png "Signin Forgot Password")
+*Fig. 18: Forgot Password page*
+
+The back-link from the forgot-password page to the sign-in page is another example creating back links between pages to maintain consistency and inter-connectedness between pages for the user's easy movement.
 
 ![Forgot Password Back Button](/content/page-content/design/whiteboarding-imgs/forgot-password-back.png "Forgot Password Back Button")
-*Fig 18: Link go back on Forgot Password page*
+*Fig. 19: Link go back on Forgot Password page*
 
 ### Favourite Recipes
+**Fig. 10** depicts a star that toggles whether the given recipe is added to the list of 'favourite' recipes for the user. We create a screen that allows the user to see the list of recipes that they have previously marked as 'favourite.' We can navigate to this list by clicking on the navigation button in the hamburger menu.
+
 ![Favourite Recipes](/content/page-content/design/whiteboarding-imgs/favourite.png "Favourite Recipes")
-*Fig 19: List of Favourite Recipes*
-
-### Inventories
-![Inventory List](/content/page-content/design/whiteboarding-imgs/inventory-list.png "Inventory List")
-*Fig 20: List of Inventories*
-
-![Add Inventory Button](/content/page-content/design/whiteboarding-imgs/inventory-list-add.png "Add Inventory Button")
-*Fig 21: Add Inventory*
+*Fig. 20: List of Favourite Recipes*
 
 ### Menus
+A menu is a collection of recipes for dishes that the user wants to create at a given time. Why have menus? This arises from the question, 'when the user searches for a dish given a set of ingredients in an inventory, what if the user wants to search for another recipe for the same meal?' The search for the second recipe should discount the ingredients that would pontentially be used when creating the first dish. The menu allows users to add recipes together such that they are guaranteed that they have the inventory has all the ingredients and amounts for all the recipes currently added to the menu.
+
+**Fig. 21** is a list of menus that the user can maintain.
+
 ![Menus](/content/page-content/design/whiteboarding-imgs/menus.png "Menus")
-*Fig 22: Menus*
+*Fig. 21: Menus*
+
+Clicking on a particular menu in the menu list shows the particulars of a menu. This includes the name of the menu, the list of recipes added to the menu and a cummulative list of ingredients created by summing over the ingredients required for individual recipes in the menu. The user can also choose to delete a recipe from the menu.
+Clicking on a particular recipe in the menu will lead the user to the recipe page such as the one in **Fig. 9**.
 
 ![Menu](/content/page-content/design/whiteboarding-imgs/menu.png "Menu")
-*Fig 23: Menu*
+*Fig. 22: Menu*
+
+### Inventories
+An inventory stores a list of ingredients available with the user. Instead of constricting the user to just one inventory, we choose to allow the user to create many 'inventories' or lists of ingredients. The user may want to track an inventory at multiple locations invidually, say their grandmother lives next door and they would want to track her inventory too, for her. When designing we may not need a compelling reason to allow the user to do more, but we'll need a compelling reason to restrict the user. But this comes with a tradeoff if the flow doesn't seem natural enough then it can confuse the users.
+
+The inventory list is exactly what the name says, it is a list of inventories that are depicted as a table. The elements in the row may show information about the individual inventories, it can also have action buttons to call the user to perform further action on the element.
+
+![Inventory List](/content/page-content/design/whiteboarding-imgs/inventory-list.png "Inventory List")
+*Fig. 24: List of Inventories*
+
+![Inventory List Sort](/content/page-content/design/whiteboarding-imgs/sort-inventory-list.png "Inventory List Sort")
+*Fig. 25: Sorting the List of Inventories*
+
+The 'add an inventory' button above the table creates a new inventory object and adds a pointer to it in the table. 
+
+![Add Inventory Button](/content/page-content/design/whiteboarding-imgs/inventory-list-add.png "Add Inventory Button")
+*Fig. 26: Add Inventory*
+
+But before it can add the inventory object we show display a large box above the content, called a modal, that captures some basic identifying information about the object. This flow forces the user to provide, say, a name for the inventory, if they don't then inventory is not created.
+
+![New Inventory Modal](/content/page-content/design/whiteboarding-imgs/new-inventory-modal.png "New Inventory Modal")
+*Fig. 27: New Inventory Modal*
+
+An inventory is a list of available ingredients. A user can add new ingredients to the inventory by clicking on the 'add ingredients' button, depicted by the 'plus' symbol above the table.
+
+![Inventory](/content/page-content/design/whiteboarding-imgs/inventory.png "Inventory")
+*Fig. 28: Inventory*
+
+The user can launch a search from the inventory page, as per the original idea. However, a constraint added on the search was that it should look for recipes such that there are enough ingredients for all the items in the menu together. To do this, the menu would need to be linked to the search that is about to be launched. To link the menu, again a modal is shown that allows the user to choose the menu they want to link to.
+
+![Choose Menu Modal](/content/page-content/design/whiteboarding-imgs/choose-menu-modal.png "Choose Menu Modal")
+*Fig. 29: Choose Menu Modal*
+
+An alternative idea would be to link the inventory permanently to a menu, and not have a modal everytime we launch a search. In other words the menu linked becomes an attribute of the inventory. This could have the same effect, but this is a good example of how reflecting the real-world relationships when depicting these virtual relationships can help the user understand the system faster and more intuitively. In the real-world a menu is not an attribute of an inventory, one could have potentially different menus that are created from the same inventory, for example, given bread and eggs, a user could decide to have two alternative menus, one that has an omelette sandwich, and the other that has scrambled eggs on toast. Linking a menu as an attribute of an inventory removes the transient - short-lived - nature of the relationship and between a menu and an inventory and makes having a world where multiple menus are linked to an inventory as attributes is hard to understand for user.
 
 ## Flow Diagram
 ![Flow Diagram](/content/page-content/design/whiteboarding-imgs/flow-diagram.png "Flow Diagram")
-*Fig 24: Flow Diagram*
+*Fig. 30: Flow Diagram*
 
 ## Negative Flows
+
+## Empty States
