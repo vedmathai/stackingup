@@ -184,42 +184,48 @@ Clicking on a particular recipe in the menu will lead the user to the recipe pag
 ![Menu](/content/page-content/design/whiteboarding-imgs/menu.png "Menu")
 *Fig. 22: Menu*
 
+![Menu Update Inventory Button](/content/page-content/design/whiteboarding-imgs/menu-update-inventory.png "Menu Update Inventory Button")
+*Fig. 23: Menu Update Inventory Button*
+
+![Menu Attributes](/content/page-content/design/whiteboarding-imgs/menu-attributes.png "Menu Attributes")
+*Fig. 24: Menu Attributes*
+
 ### Inventories
 An inventory stores a list of ingredients available with the user. Instead of constricting the user to just one inventory, we choose to allow the user to create many 'inventories' or lists of ingredients. The user may want to track an inventory at multiple locations invidually, say their grandmother lives next door and they would want to track her inventory too, for her. When designing we may not need a compelling reason to allow the user to do more, but we'll need a compelling reason to restrict the user. But this comes with a tradeoff if the flow doesn't seem natural enough then it can confuse the users.
 
 The inventory list is exactly what the name says, it is a list of inventories that are depicted as a table. The elements in the row may show information about the individual inventories, it can also have action buttons to call the user to perform further action on the element.
 
 ![Inventory List](/content/page-content/design/whiteboarding-imgs/inventory-list.png "Inventory List")
-*Fig. 24: List of Inventories*
+*Fig. 25: List of Inventories*
 
 ![Inventory List Sort](/content/page-content/design/whiteboarding-imgs/sort-inventory-list.png "Inventory List Sort")
-*Fig. 25: Sorting the List of Inventories*
+*Fig. 26: Sorting the List of Inventories*
 
 The 'add an inventory' button above the table creates a new inventory object and adds a pointer to it in the table. 
 
 ![Add Inventory Button](/content/page-content/design/whiteboarding-imgs/inventory-list-add.png "Add Inventory Button")
-*Fig. 26: Add Inventory*
+*Fig. 27: Add Inventory*
 
 But before it can add the inventory object we show display a large box above the content, called a modal, that captures some basic identifying information about the object. This flow forces the user to provide, say, a name for the inventory, if they don't then inventory is not created.
 
 ![New Inventory Modal](/content/page-content/design/whiteboarding-imgs/new-inventory-modal.png "New Inventory Modal")
-*Fig. 27: New Inventory Modal*
+*Fig. 28: New Inventory Modal*
 
 An inventory is a list of available ingredients. A user can add new ingredients to the inventory by clicking on the 'add ingredients' button, depicted by the 'plus' symbol above the table.
 
 ![Inventory](/content/page-content/design/whiteboarding-imgs/inventory.png "Inventory")
-*Fig. 28: Inventory*
+*Fig. 29: Inventory*
 
 The user can launch a search from the inventory page, as per the original idea. However, a constraint added on the search was that it should look for recipes such that there are enough ingredients for all the items in the menu together. To do this, the menu would need to be linked to the search that is about to be launched. To link the menu, again a modal is shown that allows the user to choose the menu they want to link to.
 
 ![Choose Menu Modal](/content/page-content/design/whiteboarding-imgs/choose-menu-modal.png "Choose Menu Modal")
-*Fig. 29: Choose Menu Modal*
+*Fig. 30: Choose Menu Modal*
 
 An alternative idea would be to link the inventory permanently to a menu, and not have a modal everytime we launch a search. In other words the menu linked becomes an attribute of the inventory. This could have the same effect, but this is a good example of how reflecting the real-world relationships when depicting these virtual relationships can help the user understand the system faster and more intuitively. In the real-world a menu is not an attribute of an inventory, one could have potentially different menus that are created from the same inventory, for example, given bread and eggs, a user could decide to have two alternative menus, one that has an omelette sandwich, and the other that has scrambled eggs on toast. Linking a menu as an attribute of an inventory removes the transient - short-lived - nature of the relationship and between a menu and an inventory and makes having a world where multiple menus are linked to an inventory as attributes is hard to understand for user.
 
 ## Flow Diagram
 ![Flow Diagram](/content/page-content/design/whiteboarding-imgs/flow-diagram.png "Flow Diagram")
-*Fig. 30: Flow Diagram*
+*Fig. 31: Flow Diagram*
 
 ## Negative Flows
 
