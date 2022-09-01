@@ -179,6 +179,7 @@ A menu is a collection of recipes for dishes that the user wants to create at a 
 *Fig. 21: Menus*
 
 Clicking on a particular menu in the menu list shows the particulars of a menu. This includes the name of the menu, the list of recipes added to the menu and a cummulative list of ingredients created by summing over the ingredients required for individual recipes in the menu. The user can also choose to delete a recipe from the menu.
+
 Clicking on a particular recipe in the menu will lead the user to the recipe page such as the one in **Fig. 9**.
 
 ![Menu](/content/page-content/design/whiteboarding-imgs/menu.png "Menu")
@@ -187,8 +188,9 @@ Clicking on a particular recipe in the menu will lead the user to the recipe pag
 ![Menu Update Inventory Button](/content/page-content/design/whiteboarding-imgs/menu-update-inventory.png "Menu Update Inventory Button")
 *Fig. 23: Menu Update Inventory Button*
 
-![Menu Attributes](/content/page-content/design/whiteboarding-imgs/menu-attributes.png "Menu Attributes")
-*Fig. 24: Menu Attributes*
+To allow a user to add a recipe to the menu, we add a 'add to menu' button on the recipe. Clicking this button will open a modal that asks the users choose a menu to add this recipe to.
+![Add to Menu](/content/page-content/design/whiteboarding-imgs/add-to-menu.png "Add to Menu")
+*Fig. 25: Add to Menu*
 
 ### Inventories
 An inventory stores a list of ingredients available with the user. Instead of constricting the user to just one inventory, we choose to allow the user to create many 'inventories' or lists of ingredients. The user may want to track an inventory at multiple locations invidually, say their grandmother lives next door and they would want to track her inventory too, for her. When designing we may not need a compelling reason to allow the user to do more, but we'll need a compelling reason to restrict the user. But this comes with a tradeoff if the flow doesn't seem natural enough then it can confuse the users.
@@ -196,37 +198,105 @@ An inventory stores a list of ingredients available with the user. Instead of co
 The inventory list is exactly what the name says, it is a list of inventories that are depicted as a table. The elements in the row may show information about the individual inventories, it can also have action buttons to call the user to perform further action on the element.
 
 ![Inventory List](/content/page-content/design/whiteboarding-imgs/inventory-list.png "Inventory List")
-*Fig. 25: List of Inventories*
+*Fig. 26: List of Inventories*
 
 ![Inventory List Sort](/content/page-content/design/whiteboarding-imgs/sort-inventory-list.png "Inventory List Sort")
-*Fig. 26: Sorting the List of Inventories*
+*Fig. 27: Sorting the List of Inventories*
 
 The 'add an inventory' button above the table creates a new inventory object and adds a pointer to it in the table. 
 
 ![Add Inventory Button](/content/page-content/design/whiteboarding-imgs/inventory-list-add.png "Add Inventory Button")
-*Fig. 27: Add Inventory*
+*Fig. 28: Add Inventory*
 
 But before it can add the inventory object we show display a large box above the content, called a modal, that captures some basic identifying information about the object. This flow forces the user to provide, say, a name for the inventory, if they don't then inventory is not created.
 
 ![New Inventory Modal](/content/page-content/design/whiteboarding-imgs/new-inventory-modal.png "New Inventory Modal")
-*Fig. 28: New Inventory Modal*
+*Fig. 29: New Inventory Modal*
 
-An inventory is a list of available ingredients. A user can add new ingredients to the inventory by clicking on the 'add ingredients' button, depicted by the 'plus' symbol above the table.
+An inventory is a list of available ingredients. Each row represents an available ingredient along with the quantity available. 
 
 ![Inventory](/content/page-content/design/whiteboarding-imgs/inventory.png "Inventory")
-*Fig. 29: Inventory*
+*Fig. 30: Inventory*
+
+A user can add new ingredients to the inventory by clicking on the 'add ingredients' button, depicted by the 'plus' symbol above the table. The modal allows users to choose an ingredient from a pre-defined set of ingredients and also provide the amount available in their physical pantry.
+
+![Add Ingredient to Inventory Modal](/content/page-content/design/whiteboarding-imgs/inventory-add-ingredients.png "Add Ingredient to Inventory Modal")
+*Fig. 31: Add Ingredient to Inventory Modal*
 
 The user can launch a search from the inventory page, as per the original idea. However, a constraint added on the search was that it should look for recipes such that there are enough ingredients for all the items in the menu together. To do this, the menu would need to be linked to the search that is about to be launched. To link the menu, again a modal is shown that allows the user to choose the menu they want to link to.
 
 ![Choose Menu Modal](/content/page-content/design/whiteboarding-imgs/choose-menu-modal.png "Choose Menu Modal")
-*Fig. 30: Choose Menu Modal*
+*Fig. 32: Choose Menu Modal*
 
 An alternative idea would be to link the inventory permanently to a menu, and not have a modal everytime we launch a search. In other words the menu linked becomes an attribute of the inventory. This could have the same effect, but this is a good example of how reflecting the real-world relationships when depicting these virtual relationships can help the user understand the system faster and more intuitively. In the real-world a menu is not an attribute of an inventory, one could have potentially different menus that are created from the same inventory, for example, given bread and eggs, a user could decide to have two alternative menus, one that has an omelette sandwich, and the other that has scrambled eggs on toast. Linking a menu as an attribute of an inventory removes the transient - short-lived - nature of the relationship and between a menu and an inventory and makes having a world where multiple menus are linked to an inventory as attributes is hard to understand for user.
 
-## Flow Diagram
-![Flow Diagram](/content/page-content/design/whiteboarding-imgs/flow-diagram.png "Flow Diagram")
-*Fig. 31: Flow Diagram*
+To help make the search more relevant, the menu can have a set of attributes which can be by the search. Examples of these attributes could be the meal type or meal parts. Meal types is the attribute that determines whether the search results should include breakfast or lunch dishes. Meal parts means whether the search should include dishes for the parts of meal such as appetizers, main course or desserts.
 
-## Negative Flows
+![Menu Attributes](/content/page-content/design/whiteboarding-imgs/menu-attributes.png "Menu Attributes")
+*Fig. 33: Menu Attributes*
+## Shopping Lists
+![Shopping Lists](/content/page-content/design/whiteboarding-imgs/shopping-lists.png "Shopping Lists")
+*Fig. 34: Shopping Lists*
+
+Though search helps users build menus given ingredients they already have with them. But say they build a menu which has a few or more ingredients that do not have in their pantry. Another useful feature of 'In my pantry,' would be help users create a list of items for which they would have to acquire in order to be able to make all the recipes in the menu, at least according to the recipes for each item.
+
+As for menus and inventories, this application will allow users to create multiple shopping lists. The table in fig. 32 displays the list of shopping lists. Users can use the 'create new shopping list' to create a fresh shopping list.
+
+![Shopping List](/content/page-content/design/whiteboarding-imgs/shopping-list.png "Shopping List")
+*Fig. 35: Shopping List*
+
+As mentioned above a shopping list is list of ingredients and their respective required quantities needed for the user to successfully be able to prepare all the dishes in the menu. Accordingly, the table in fig. 33 is a list of ingredients and their quantities. A function to generate a shopping list will take a menu, or list of recipes, and an inventory, or a list of available ingredients, and it will generate a list of required ingredients as per the ingredients listed for each recipe and it will perform a subtraction over the required quantity and available quantity for each element. We choose to make the menu and inventory are attributes of the shopping list as the shopping list makes sense only given the menu and the inventory, unlike the transient way in which we used the menu for search by asking the user to choose a menu when performing a search from the inventory page in fig. 29.
+
+## Flow Diagram
+When talking about individual page designs above, we have already covered the many ways they interact with each other, but drawing out the actual web of interactions between the different pages, when whiteboarding, can help provide a 100 feet in the air view of the application pages and their interactions.
+
+![Flow Diagram](/content/page-content/design/whiteboarding-imgs/flow-diagram.png "Flow Diagram")
+*Fig. 36: Flow Diagram*
+
+The starting point of the application would be the search page, shown in fig. 34 at the centre of the web. The user can perform a search using the search bar and move to the search page. Alternatively, using the drop-down menu shown in fig. 13, the user can navigate to the other pages, namely the menus page, inventories page, or the shopping lists page. By clicking on a list item in the respective tables, users can move to the specific menu, inventory or shopping list page.
+
+By performing a search a user will be shown the search results page. By clicking on a search result, the user will be shown a recipe page. Here the user can click the add-to-menu button to add the recipe to the menu.
+
+It should be pointed out that for the sake of not making the diagram even more intricate than it already is, we have left out drawing an arrow from the inventory and menu node to the shopping list node which could have indicated the use of the inventory and menu when creating the shopping list if drawn.
+
+The user can go to the login page using the login option in the hamburger menu (link not shown for brevity). From the login page the user may go to the sign-up page to sign-up if they haven't already, or they may go to the forgot credentials page if they need to reset their credentials. If th user is able to login successfully they will be taken to the search page again, but this time in the logged-in state.
+
+## Error Flows
+Most flows we have discussed above are so called 'happy paths,' that is the flow taken when the user is on the right trajectory to complete what they want to complete, for example, search leads to search results which leads to recipes that can get added to the menu. Alternatively, the happy path for submitting a username and password is for the user to be logged in. If the user provided the wrong username and password combination, the user cannot be logged in. At this point, the application should inform the user of this and help the user recover onto the right path.
+
+The screens below capture error flows for when the user is attempting to signup and when the username is not unique as in fig. 37 and when the password is too weak as in fig. 38.
+
+Error flows are usually displayed in red out of convention for caution, so we use that colour too below.
+
+![Username Taken Error](/content/page-content/design/whiteboarding-imgs/username-taken-error.png "Username Taken Error")
+*Fig. 37: Username Taken Error*
+
+![Password Too Weak Error](/content/page-content/design/whiteboarding-imgs/password-error.png "Password Too Weak Error")
+*Fig. 38: Password Too Weak Error*
 
 ## Empty States
+The data backing the tables in the figures displaying the search results, list of inventories, list of menus, inventory, menu and shopping list, were all non-empty and therefore were populated with rows - one for each datum. But what if there is no data to start with, these tables would be empty. While having empty tables is not necessarily an issue, it can still leave the user confused as to whether there is no data, or if there was something that went wrong on the page load or if the data still hadn't arrived. It should be noted that most users would not go into this level of detail in their analysis, but they would still subconsciously be unnerved, therefore it makes sense to inform the user about the state of the table where possible.
+
+If the table were still loading, a loading animation can be displayed to the let the users know that. Similarly, if the load has completed and there indeed was no data to display in the table - known as an empty state - informing the users that the table is empty and what they could do to start populating the table can make the entire experience smoother for them as this will help them rule out thinking about other possible issues.
+
+Below, we loop through some of the tables and show drawings of what empty states would look like for them. Empty state messages follow similar templates, inform the user that the particular data set is empty, and what next to do about it.
+
+We inventories' empty state message to illustrate: *There are no inventories. Use the add inventory button to get started.*
+
+![Search Empty State](/content/page-content/design/whiteboarding-imgs/search-empty-state.png "Search Empty State")
+*Fig. 39: Search Empty State*
+
+![Inventories Empty State](/content/page-content/design/whiteboarding-imgs/inventories-empty-state.png "Inventories Empty State")
+*Fig. 40: Inventories Empty State*
+
+![Inventory Empty State](/content/page-content/design/whiteboarding-imgs/inventory-empty-state.png "Inventory Empty State")
+*Fig. 41: Inventory Empty State*
+
+![Menus Empty State](/content/page-content/design/whiteboarding-imgs/menus-empty-state.png "Menus Empty State")
+*Fig. 42: Menus Empty State*
+
+![Menu Empty State](/content/page-content/design/whiteboarding-imgs/menu-empty-state.png "Menu Empty State")
+*Fig. 43: Menu Empty State*
+
+![Shopping List Empty State](/content/page-content/design/whiteboarding-imgs/shopping-list-empty-state.png "Shopping List Empty State")
+*Fig. 44: Shopping List Empty State*
